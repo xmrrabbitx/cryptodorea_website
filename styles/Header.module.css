@@ -5,8 +5,9 @@
     src: url("../public/fonts/Poppins/Poppins-Bold.ttf");
 }
 
-.title{
-    font-family: Poppins-Bold;
+
+
+.titleHeader{
+    font-family: Poppins-semiBold;
     font-weight: bold;
 }
-
