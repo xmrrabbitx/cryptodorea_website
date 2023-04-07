@@ -6,7 +6,7 @@ export default function Home() {
   const { data: session,status } = useSession()
   const loading = status === 'loading'
   
-  const [username, setUsername] = useState("");
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   if (session) {
@@ -16,7 +16,7 @@ export default function Home() {
     const handleSubmit = async (event:any) => {
       event.preventDefault();
       const result = await signIn("credentials", {
-        username,
+        email,
         password,
         redirect: false,
       });
@@ -28,10 +28,10 @@ export default function Home() {
     <>
           sign in page
           <form onSubmit={handleSubmit}>
-            <label>username
+            <label>email
               <input 
               type="text"
-              value={username}
+              value={email}
               onChange={(event)=>setUsername(event.target.value)}
               />
               </label>

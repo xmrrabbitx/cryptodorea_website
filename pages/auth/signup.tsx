@@ -7,6 +7,7 @@ export default function index(){
     const router = useRouter();
 
     const [username, setUserName] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
 
@@ -17,7 +18,7 @@ export default function index(){
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, email, password }),
 
       });
 
@@ -26,7 +27,7 @@ export default function index(){
       if (res.error) {
         alert(res.error);
       } else {
-        console.log(res);
+        
         // router.push("/");
       }
       
@@ -43,7 +44,14 @@ export default function index(){
               onChange={(event)=>setUserName(event.target.value)}
               />
               </label>
-               <label>pass
+              <label>email
+              <input 
+              type="email"
+              value={email}
+              onChange={(event)=>setEmail(event.target.value)}
+              />
+              </label>
+               <label>password
               <input 
               type="text"
               value={password}
