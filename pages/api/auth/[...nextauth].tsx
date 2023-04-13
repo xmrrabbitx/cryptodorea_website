@@ -3,7 +3,7 @@ import GithubProvider from "next-auth/providers/github"
 import {connect} from "../db"
 import CredentialsProvider from "next-auth/providers/credentials"
 import UserCredentials from "next-auth/providers/credentials"
-import type { NextApiRequest, NextApiResponse } from 'next'
+import bcrypt from "bcrypt" 
 
 export const authOptions:NextAuthOptions = {
   // Configure one or more authentication providers
@@ -19,20 +19,27 @@ export const authOptions:NextAuthOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials:any, req: NextApiRequest,
-        res: NextApiResponse) {
-       
+      async authorize(credentials:any) {
+   
         const db = await connect(); // connect to your database
-        const user = await db.query(
-          "SELECT * FROM user WHERE email = ? AND password = ?",
-          [credentials.email, credentials.password]
+        const user:any = await db.query(
+          "SELECT * FROM users WHERE email = ?",
+          [credentials.email]
         );
-        if(user && user.length > 0){
-          return user[0];
-        } else {
-          throw new Error('Invalid credentials');
+
+        const matchpass = await bcrypt.compare(credentials.password, user[0][0]["password"]);
+        
+        if (user[0] && user[0].length > 0) {
+          
+          if(matchpass){
+            
+            return user[0]
+          }
+         
         }
-       
+        // Return null if user data could not be retrieved
+        return null
+        
       }
     })
   ],

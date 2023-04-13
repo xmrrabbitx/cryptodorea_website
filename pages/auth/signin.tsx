@@ -9,17 +9,21 @@ export default function Home() {
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  /*
   if (session) {
     return <p>You are already signed in</p>;
   }
-
+*/
     const handleSubmit = async (event:any) => {
+      
       event.preventDefault();
-      const result = await signIn("credentials", {
+      var result:any = await signIn("credentials", {
         email,
         password,
         redirect: false,
       });
+
+      console.log(result)
 
     }
 
