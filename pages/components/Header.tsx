@@ -36,7 +36,9 @@ export default function Header(){
                             </Link>
                         </span>
                         <span>
-                            <span className='bg-[#FACA43] py-2 px-5  ml-16 rounded-md text-lg'>Launch app</span>
+                            <span className='bg-[#FACA43] py-2 px-5  ml-16 rounded-md text-lg'>
+                               <Link className='' href={"/dashboard"} > Launch app </Link>
+                            </span>
                         </span>
                     </div>
 

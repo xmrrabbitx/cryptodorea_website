@@ -1,13 +1,31 @@
 import { useState, useEffect } from 'react';
+import { useSession, getSession } from 'next-auth/react';
+import { useRouter } from "next/router"
 
 interface Data {
     [key: string]: string;
 }
 
-
 export default function dashboard(){
 
+    const { data: session,status } = useSession()
+    const loading = status === 'loading'
+
+    const { data } = useSession();
+    console.log(data)
+
+    const router = useRouter();
+   
     const [res, setRecentItem] = useState<Data>({});
+
+    if (!session && !loading) {
+      
+        router.push('/auth/signin')
+     
+     
+    }else{
+
+        
 
     const createSol = async ()=>{
   
@@ -30,4 +48,6 @@ export default function dashboard(){
                 <button className="bg-blue-500" onClick={createSol}>create</button>
         </>
     )
+
+    }
 }

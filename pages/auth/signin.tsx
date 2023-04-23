@@ -1,19 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import { signIn,signOut} from "next-auth/react";
 import { useSession, getSession } from 'next-auth/react';
+import { useRouter } from "next/router"
 
 export default function Home() {
+
   const { data: session,status } = useSession()
   const loading = status === 'loading'
+
+  const router = useRouter();
   
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  /*
+  
   if (session) {
-    return <p>You are already signed in</p>;
-  }
-*/
+    
+      
+    router.push('/dashboard')
+    
+   
+  }else{
+
     const handleSubmit = async (event:any) => {
       
       event.preventDefault();
@@ -23,7 +31,6 @@ export default function Home() {
         redirect: false,
       });
 
-      console.log(result)
 
     }
 
@@ -49,5 +56,7 @@ export default function Home() {
               <button type="submit">signin</button>
             </form>
     </>
-  );
+  )
+
+  }
 }
