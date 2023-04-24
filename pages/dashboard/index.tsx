@@ -11,8 +11,8 @@ export default function dashboard(){
     const { data: session,status } = useSession()
     const loading = status === 'loading'
 
-    const { data } = useSession();
-    console.log(data)
+    const { data }:any = useSession();
+    
 
     const router = useRouter();
    
@@ -27,25 +27,26 @@ export default function dashboard(){
 
         
 
-    const createSol = async ()=>{
-  
-              try {
-                const response = await fetch('http://localhost:3000/api/createSol');
-                const data:any = await response.json();
+    const createSol = async (data:any)=>{
+
+            try {
+               
+                const response = await fetch(`http://localhost:3000/api/createSol?username=${data.session.user.name}`);
+                const result:any = await response.json();
         
-                setRecentItem(data);
+                setRecentItem(result);
         
-              } catch (error) {
-                console.log('Error fetching data:', error);
-              }
+            } catch (error) {
+               console.log('Error fetching data:', error);
+             }
           
-          console.log(res);
+          
     }
     return(
         <>
-                dashboard page
-
-                <button className="bg-blue-500" onClick={createSol}>create</button>
+                <>dashboard page</>
+                <p> Hello {data.session.user.name} , welcome to crypto dorea </p>
+                <button className="bg-blue-500" onClick={(e) => createSol(data)}>create</button>
         </>
     )
 
