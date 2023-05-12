@@ -1,27 +1,26 @@
 import { useState } from "react";
-import { signOut } from "next-auth/react";
 import { useSession, getSession } from 'next-auth/react';
 import { useRouter } from "next/router"
 import { useEffect } from 'react';
+import Cookies from "js-cookie";
 
 export default function Home() {
 
   const router = useRouter();
 
-  const { data: session,status } = useSession()
-  const loading = status === 'loading'
+  const token = Cookies.get("authToken")
   
   useEffect(() => {
     const handleSignOut = async () => {
-      if (session) {
-        await signOut();
+      if (token) {
+
+            Cookies.remove("authToken")
+        
       }
       router.push('/');
     };
     handleSignOut();
-  }, [session, router]);
-
-
+  }, [token, router]);
   
   return null;
 }

@@ -10,8 +10,10 @@ export default function index(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const [Error, setError] = useState("")
+    const [Status, setStatus] = useState("")
 
-    const handlSignup = async (event:any) => {
+    const handleSignup = async (event:any) => {
  
       event.preventDefault();
       const response = await fetch("/api/auth/signup",{
@@ -25,10 +27,19 @@ export default function index(){
       const res = await response.json();
 
       if (res.error) {
-        alert(res.error);
+
+          setError(res.error)
+
       } else {
-        
-        // router.push("/");
+
+        setError("")
+
+        setStatus(res.status)
+
+        setTimeout(() => {
+          router.push('/auth/signin');
+        }, 3000);
+      
       }
       
     }
@@ -36,7 +47,8 @@ export default function index(){
     return(
         
           <>
-           <form onSubmit={handlSignup}>
+           <form onSubmit={handleSignup}>
+
             <label>username
               <input 
               type="text"
@@ -44,22 +56,30 @@ export default function index(){
               onChange={(event)=>setUserName(event.target.value)}
               />
               </label>
+
               <label>email
-              <input 
-              type="email"
-              value={email}
-              onChange={(event)=>setEmail(event.target.value)}
-              />
+                <input 
+                type="email"
+                value={email}
+                onChange={(event)=>setEmail(event.target.value)}
+                />
               </label>
-               <label>password
-              <input 
-              type="text"
-              value={password}
-              onChange={(event)=>setPassword(event.target.value)}
-              />
+
+              <label>password
+                <input 
+                type="password"
+                value={password}
+                onChange={(event)=>setPassword(event.target.value)}
+                />
               </label>
+
               <button type="submit">signup</button>
+
             </form>
+            <>
+              {Error}
+              {Status}
+            </>
           </>
         
     )

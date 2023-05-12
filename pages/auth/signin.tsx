@@ -1,36 +1,57 @@
 import { useState, useEffect } from 'react';
-import { signIn,signOut} from "next-auth/react";
-import { useSession, getSession } from 'next-auth/react';
 import { useRouter } from "next/router"
+import Cookies from 'js-cookie';
 
 export default function Home() {
-
-  const { data: session,status } = useSession()
-  const loading = status === 'loading'
 
   const router = useRouter();
   
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [Error, setError] = useState("")
+  const [Status, setStatus] = useState("")
   
-  if (session) {
+ // if (session) {
     
       
-    router.push('/dashboard')
+   // router.push('/dashboard')
     
    
-  }else{
+  //}else{
+
+    //}
 
     const handleSubmit = async (event:any) => {
       
       event.preventDefault();
-      var result:any = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
+      const response = await fetch("/api/auth/signin",{
+
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+
       });
 
+      const res = await response.json();
+      
+      //const token = res.token.split("-")
+     
+      Cookies.set("authToken",res.token)
+
+      if (res.error) {
+
+          setError(res.error)
+
+      } else {
+
+          setError(res.status)
+
+          setTimeout(() => {
+              router.push('/dashboard');
+          }, 3000);
+
+      }
 
     }
 
@@ -55,8 +76,10 @@ export default function Home() {
               </label>
               <button type="submit">signin</button>
             </form>
+
+            {Error}
+            {Status}
     </>
   )
 
-  }
 }

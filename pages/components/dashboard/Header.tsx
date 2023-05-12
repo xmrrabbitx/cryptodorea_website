@@ -2,11 +2,8 @@ import Image from 'next/image'
 import Logo from "@/public/logos/doreaLogo.png"
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
-import Cookies from 'js-cookie'
-import jwt from 'jsonwebtoken';
 
 export default function Header(){
-
     return(
         <header>
 
@@ -40,7 +37,7 @@ export default function Header(){
                         </span>
                         <span>
                             <span className='bg-[#FACA43] py-2 px-5  ml-16 rounded-md text-lg'>
-                               <Link className='' href={"/dashboard"} > Launch app </Link>
+                               <Link className='' href={"/auth/signout"} > Signout </Link>
                             </span>
                         </span>
                     </div>
