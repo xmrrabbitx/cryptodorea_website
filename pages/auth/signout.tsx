@@ -15,7 +15,7 @@ export default function Home() {
       if (token) {
 
             Cookies.remove("authToken")
-        
+            
       }
       router.push('/');
     };

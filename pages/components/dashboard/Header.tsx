@@ -22,20 +22,6 @@ export default function Header(){
 
                     <div className='w-12/12 pr-10 pt-5 text-base flex justify-end'>
                         <span>
-                            <Link href="/">
-                                Home
-                            </Link>
-                            <Link className='ml-9' href="/#prices">
-                                Prices
-                            </Link>
-                            <Link className='ml-9' href="/docs">
-                                Docs
-                            </Link>
-                            <Link className='ml-9' href="/aboutus">
-                                About us
-                            </Link>
-                        </span>
-                        <span>
                             <span className='bg-[#FACA43] py-2 px-5  ml-16 rounded-md text-lg'>
                                <Link className='' href={"/auth/signout"} > Signout </Link>
                             </span>

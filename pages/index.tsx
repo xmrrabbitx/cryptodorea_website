@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props:any) {
 
   return (
     <>
@@ -21,8 +21,21 @@ export default function Home() {
           <div className='font-bold'>
                 
               Home page
+
+              
+    
           </div>
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+
+  const secretKey:any = process.env.JwtSecretKey
+  
+  return {
+    props:{secretKey}
+  }
+  
 }

@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import Cookies from 'js-cookie';
 require('dotenv').config();
 const crypto = require('crypto');
+const jws = require('jws');
 
 interface Data {
     email:string,
@@ -20,20 +21,12 @@ export default async function handle(
 
     const  {email, password}:Data = req.body;
 
-      const hasSpecialCharsPass = (str:string) => {
-        const regex = /[ `$%^&*\[\]"\\|,<>\/?~]/;
-        return regex.test(str);
-      }
-      
 
     if(_.isEmpty(email) || _.isEmpty(password)){
 
         return res.status(404).json({ error: `one or more fields are empty!` });
     }
-    else if(!hasSpecialCharsPass(password)){ 
-                                                                    
-        return res.status(404).json({ error: `Please remove unneccessary special characters` });
-    }
+  
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -52,19 +45,26 @@ export default async function handle(
     
     const user = User[0][0]
     const compare = bcrypt.compare(password,user["password"])
-    compare.then(data=>{
-
-        //const secret = crypto.randomBytes(64).toString('hex');
     
-        const secretKey:any = process.env.JwtSecretKey
+    compare.then(data=>{
+       if(data){
+            //const secret = crypto.randomBytes(64).toString('hex');
+            
+            const secretKey:any = process.env.JwtSecretKey
 
-        const tokenObj = {username:user["username"],email:user["email"]}
-        
-      const jwtToken = jwt.sign(tokenObj,secretKey, { expiresIn: '1h' });
-        
-       return res.status(200).json({ status: "login successful",  token:jwtToken });
+            const tokenObj = {username:user["username"],email:user["email"]}
+                
+            const jwtToken = jwt.sign(tokenObj,secretKey, { expiresIn: '1h' });
+            
+            return res.status(200).json({ status: "login successful",  token:jwtToken });
+       
+        }else{
 
+            return res.status(404).json({ error: "Wrong Password! try again ..."});
+
+       }
     })
+    
     
     return false
 
