@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import jwt from 'jsonwebtoken'
 
 type Data = {
-    verifyStatus: any
+  authCheck: any
 }
 
 export default function checkAuth(
@@ -16,5 +16,6 @@ export default function checkAuth(
   
    const verify = jwt.verify(authCookie,secretKey)
 
-  return res.status(200).json({ verifyStatus: verify })
+  return res.status(200).json({ authCheck: verify })
+  
 }

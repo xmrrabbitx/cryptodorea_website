@@ -36,8 +36,8 @@ export default function Home() {
       const res = await response.json();
       
       //const token = res.token.split("-")
-     
-      Cookies.set("authToken",res.token)
+
+     Cookies.set("authToken",res.token)
 
       if (res.error) {
 

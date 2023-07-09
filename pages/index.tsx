@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home(props:any) {
@@ -30,7 +31,7 @@ export default function Home(props:any) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context:any) {
 
   const secretKey:any = process.env.JwtSecretKey
   
@@ -39,3 +40,4 @@ export async function getServerSideProps() {
   }
   
 }
+

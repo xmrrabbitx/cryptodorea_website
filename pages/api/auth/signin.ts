@@ -43,29 +43,34 @@ export default async function handle(
         [email]
     );
     
-    const user = User[0][0]
-    const compare = bcrypt.compare(password,user["password"])
-    
-    compare.then(data=>{
-       if(data){
-            //const secret = crypto.randomBytes(64).toString('hex');
+        const user = User[0][0]
+        if(!user){
             
-            const secretKey:any = process.env.JwtSecretKey
-
-            const tokenObj = {username:user["username"],email:user["email"]}
-                
-            const jwtToken = jwt.sign(tokenObj,secretKey, { expiresIn: '1h' });
-            
-            return res.status(200).json({ status: "login successful",  token:jwtToken });
+            return res.status(404).json({ error: "Wrong Credentials! try again ..."});
        
         }else{
+            const compare = bcrypt.compare(password,user["password"])
+            
+            compare.then(data=>{
+            if(data){
+                    //const secret = crypto.randomBytes(64).toString('hex');
+                    
+                    const secretKey:any = process.env.JwtSecretKey
 
-            return res.status(404).json({ error: "Wrong Password! try again ..."});
+                    const tokenObj = {username:user["username"],email:user["email"]}
+                        
+                    const jwtToken = jwt.sign(tokenObj,secretKey, { expiresIn: '1h' });
+                    
+                    return res.status(200).json({ status: "login successful",  token:jwtToken });
+            
+                }else{
 
-       }
-    })
-    
-    
+                    return res.status(404).json({ error: "Wrong Password! try again ..."});
+
+            }
+            })
+        
+        }
     return false
 
 }

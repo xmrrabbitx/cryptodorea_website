@@ -12,6 +12,8 @@ export default function handler(
 ) {
 
   const username = req.query.username;
+  const dateTime = req.query.dateTime;
+  const contractName = req.query.contractName;
 
 
   function creatSol(){
@@ -22,9 +24,8 @@ export default function handler(
   
   }
   
-  fs.writeFile(`./pages/dashboard/web3/contracts/${username}.sol`,creatSol(),function(err){
+  fs.writeFile(`./pages/dashboard/web3/contracts/${dateTime}_${username}_${contractName}.sol`,creatSol(),function(err){
     if (err) throw err;
-        console.log('Saved!');
    });
 
   res.status(200).json({response:"file created!"})
