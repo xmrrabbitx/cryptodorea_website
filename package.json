@@ -13,6 +13,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "cookies": "^0.8.0",
     "crypto": "^1.0.1",

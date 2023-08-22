@@ -1,32 +1,13 @@
 import { forEach } from "lodash";
-import ChooseName from "./stages/ChooseName"
 import { useState, useEffect } from 'react'
 
 
 export default function createGiveaway(cookies:any){
 
-    /*
-    const createSol = async (data:any)=>{
-
-        try {
-           
-            const response = await fetch(`http://localhost:3000/api/createSol?username=${data.session.user.name}`);
-            const result:any = await response.json();
-    
-            setRecentItem(result);
-    
-        } catch (error) {
-
-            console.log('Error fetching data:', error);
-
-         }
-      
-}
-*/
-
     const username = cookies.cookies.username
 
     const [contractName, setContractName] = useState("");
+    const [pointsNumber, setPointsNumber] = useState<number>();
    
 
     const [res, setRes] = useState("");
@@ -44,7 +25,7 @@ export default function createGiveaway(cookies:any){
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ contractName, username, formatedDateTime}),
+                body: JSON.stringify({ contractName, username, formatedDateTime,pointsNumber}),
 
             });
 
@@ -53,7 +34,7 @@ export default function createGiveaway(cookies:any){
             if(resp.error){
                 setError(resp.error);
             }else{
-                setRes(resp.response);
+                setRes(resp.success);
             }
 
     }
@@ -73,6 +54,14 @@ export default function createGiveaway(cookies:any){
                 onChange={(event)=>setContractName(event.target.value)}
                 />
                 </label>
+                <label>points number
+                <input 
+                type="number"
+                value={pointsNumber}
+                onChange={(event)=>setPointsNumber(parseInt(event.target.value))}
+                />
+                </label>
+                
                 
                 <button type="submit">create</button>
             </form>

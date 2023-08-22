@@ -9,34 +9,38 @@ export default async function creategiveaway(
   res: NextApiResponse
 ) {
 
-  const contractName = req.body.contractName;
-  const userName = req.body.username;
+  const contractName:string = req.body.contractName;
+  const userName:string = req.body.username;
   const dateTime = req.body.formatedDateTime;
+  const pointsNumber:number = req.body.pointsNumber;
+
 
   const db = await connect();
 
-  if(contractName && userName && dateTime ){
+  if(contractName && userName && dateTime && pointsNumber){
 
-    const directoryPath = `./pages/dashboard/web3/contracts/${userName}/${dateTime}`;
-    const filePath = `./pages/dashboard/web3/contracts/${userName}/${dateTime}/${contractName}.sol`
-    
-  if (fs.existsSync(filePath)) {
+    const hasSpecialChars = (str:string) => {
+      const regex = /[`!#%^*_+\-\[\]{};':"\\|<>\/?~]/;
+     
+      return regex.test(str);
+    }
+
+    if(hasSpecialChars(contractName)){
+
+      return res.status(404).json({error:"special characters are not allowed!"})
       
-    res.status(404).json({error:"file existed! try another contract name for it ..."})
-    
-  }else{
-    
-    
-    const User:any = await db.query(
-        "select id from users where username = ?",
-        [userName]
-    );
-    const id = User[0][0]['id'];
+    }else{
 
-    const userIdCheck:any = await db.query(
-      "select * from contracts where user_id=(?)",
-      [id]
-    );
+      const User:any = await db.query(
+          "select id from users where username = ?",
+          [userName]
+      );
+      const id = User[0][0]['id'];
+
+      const userIdCheck:any = await db.query(
+        "select * from contracts where user_id=(?)",
+        [id]
+      );
    
       for(let results of userIdCheck[0]){
         
@@ -49,28 +53,18 @@ export default async function creategiveaway(
       }
 
       const Contracts:any = await db.query(
-        "INSERT INTO contracts  (contract_name, user_id, created_at) VALUES(?, ?, NOW())",
-        [contractName, id]
+        "INSERT INTO contracts  (contract_name, points_number, user_id,  created_at) VALUES(?, ?, ?, NOW())",
+        [contractName, pointsNumber, id]
       );
 
-    if (!fs.existsSync(directoryPath)) {
-      // Create the directory if it doesn't exist
-      fs.mkdirSync(directoryPath, { recursive: true });
+      return res.status(404).json({success:"your contract is created successful!"})
+        
+
     }
-
-    fs.writeFile(filePath, baseContract(contractName), function (err) {
-      if (err) throw err;
-    });
-
-    
-    
-  }
-
-    res.status(200).json({response:"file created!"})
   
   }else{
 
-    res.status(404).json({error:"some fields are empty!"})
+    return res.status(404).json({error:"some fields are empty!"})
 
   }
 

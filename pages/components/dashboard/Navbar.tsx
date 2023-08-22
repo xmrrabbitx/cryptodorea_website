@@ -6,6 +6,10 @@ export default function Navbar(){
             <Link href={"/dashboard/creategiveaway"}>
                 Create Giveaway
             </Link>
+           <br />
+            <Link href={"/dashboard/managegiveaways"}>
+                manage Giveaways
+            </Link>
         </>
     )
 }
