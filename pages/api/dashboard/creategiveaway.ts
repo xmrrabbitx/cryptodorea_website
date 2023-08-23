@@ -11,13 +11,15 @@ export default async function creategiveaway(
 
   const contractName:string = req.body.contractName;
   const userName:string = req.body.username;
-  const dateTime = req.body.formatedDateTime;
   const pointsNumber:number = req.body.pointsNumber;
+  const limitUsers:number = req.body.limitUsers;
+  const trigerDate:number = req.body.trigerDate;
+  const congratsText:string = req.body.congratsText;
 
 
   const db = await connect();
 
-  if(contractName && userName && dateTime && pointsNumber){
+  if(contractName && userName && pointsNumber && limitUsers){
 
     const hasSpecialChars = (str:string) => {
       const regex = /[`!#%^*_+\-\[\]{};':"\\|<>\/?~]/;
@@ -53,8 +55,8 @@ export default async function creategiveaway(
       }
 
       const Contracts:any = await db.query(
-        "INSERT INTO contracts  (contract_name, points_number, user_id,  created_at) VALUES(?, ?, ?, NOW())",
-        [contractName, pointsNumber, id]
+        "INSERT INTO contracts  (contract_name, points_number, user_id, limit_users, congrats_text, triger_date, created_at, deleted_at) VALUES(?, ?, ?, ?, FROM_UNIXTIME(?), NOW(), FROM_UNIXTIME(?))",
+        [contractName, pointsNumber, id, limitUsers, trigerDate, congratsText]
       );
 
       return res.status(404).json({success:"your contract is created successful!"})

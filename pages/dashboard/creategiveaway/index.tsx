@@ -8,6 +8,9 @@ export default function createGiveaway(cookies:any){
 
     const [contractName, setContractName] = useState("");
     const [pointsNumber, setPointsNumber] = useState<number>();
+    const [limitUsers, setLimitUsers] = useState<number>();
+    const [trigerDate, setTrigerDate] = useState<number>();
+    const [congratsText, setCongratsText] = useState("");
    
 
     const [res, setRes] = useState("");
@@ -15,17 +18,22 @@ export default function createGiveaway(cookies:any){
 
     const handleSubmit = async (event:any) => {
 
-        event.preventDefault();
- 
-            const date = new Date();
-            const dateTime = date.toLocaleDateString();
-            const formatedDateTime = dateTime.split('/').join('');
+            event.preventDefault();
+
+            console.log(limitUsers);
+            if(limitUsers){
+                
+                setLimitUsers(0);
+            }
+            
+            // deleteDate time
+            //
 
             const response = await fetch("/api/dashboard/creategiveaway",{
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ contractName, username, formatedDateTime,pointsNumber}),
+                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText}),
 
             });
 
@@ -37,7 +45,7 @@ export default function createGiveaway(cookies:any){
                 setRes(resp.success);
             }
 
-    }
+        }
 
     return (
 
@@ -59,6 +67,27 @@ export default function createGiveaway(cookies:any){
                 type="number"
                 value={pointsNumber}
                 onChange={(event)=>setPointsNumber(parseInt(event.target.value))}
+                />
+                </label>
+                <label>users limitation
+                <input 
+                type="number"
+                value={limitUsers}
+                onChange={(event)=>setLimitUsers(parseInt(event.target.value))}
+                />
+                </label>
+                <label>triger Date
+                <input 
+                type="number"
+                value={trigerDate}
+                onChange={(event)=>setTrigerDate(parseInt(event.target.value))}
+                />
+                </label>
+                <label>congragulation text
+                <input 
+                type="text"
+                value={congratsText}
+                onChange={(event)=>setCongratsText(event.target.value)}
                 />
                 </label>
                 
