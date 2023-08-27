@@ -14,7 +14,10 @@ export default async function creategiveaway(
   const pointsNumber:number = req.body.pointsNumber;
   const limitUsers:number = req.body.limitUsers;
   const trigerDate:number = req.body.trigerDate;
+  const deleteDate:number = req.body.deleteDate;
   const congratsText:string = req.body.congratsText;
+  const giveawayType:string = req.body.giveawayType;
+  const giveawayAmount:number = req.body.giveawayAmount;
 
 
   const db = await connect();
@@ -55,8 +58,8 @@ export default async function creategiveaway(
       }
 
       const Contracts:any = await db.query(
-        "INSERT INTO contracts  (contract_name, points_number, user_id, limit_users, congrats_text, triger_date, created_at, deleted_at) VALUES(?, ?, ?, ?, FROM_UNIXTIME(?), NOW(), FROM_UNIXTIME(?))",
-        [contractName, pointsNumber, id, limitUsers, trigerDate, congratsText]
+        "INSERT INTO contracts  (contract_Name, points_number, user_id, limit_users, congrats_text, triger_date, created_at, deleted_at,giveaway_type, giveaway_amount) VALUES(?, ?, ?, ?, ?, FROM_UNIXTIME(?), NOW(), FROM_UNIXTIME(?), ?, ?)",
+                                [contractName, pointsNumber, id, limitUsers, congratsText, trigerDate, deleteDate, giveawayType, giveawayAmount]
       );
 
       return res.status(404).json({success:"your contract is created successful!"})

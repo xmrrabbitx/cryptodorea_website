@@ -10,7 +10,10 @@ export default function createGiveaway(cookies:any){
     const [pointsNumber, setPointsNumber] = useState<number>();
     const [limitUsers, setLimitUsers] = useState<number>();
     const [trigerDate, setTrigerDate] = useState<number>();
+    const [deleteDate, setDeleteDate] = useState<number>();
     const [congratsText, setCongratsText] = useState("");
+    const [giveawayType, setGiveawayType] = useState("");
+    const [giveawayAmount, setGiveawayAmount] = useState<number>();
    
 
     const [res, setRes] = useState("");
@@ -20,20 +23,11 @@ export default function createGiveaway(cookies:any){
 
             event.preventDefault();
 
-            console.log(limitUsers);
-            if(limitUsers){
-                
-                setLimitUsers(0);
-            }
-            
-            // deleteDate time
-            //
-
             const response = await fetch("/api/dashboard/creategiveaway",{
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText}),
+                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, deleteDate, congratsText, giveawayType, giveawayAmount}),
 
             });
 
@@ -83,11 +77,32 @@ export default function createGiveaway(cookies:any){
                 onChange={(event)=>setTrigerDate(parseInt(event.target.value))}
                 />
                 </label>
+                <label>delete at Date
+                <input 
+                type="number"
+                value={deleteDate}
+                onChange={(event)=>setDeleteDate(parseInt(event.target.value))}
+                />
+                </label>
                 <label>congragulation text
                 <input 
                 type="text"
                 value={congratsText}
                 onChange={(event)=>setCongratsText(event.target.value)}
+                />
+                </label>
+                <label>giveaway type
+                <input 
+                type="text"
+                value={giveawayType}
+                onChange={(event)=>setGiveawayType(event.target.value)}
+                />
+                </label>
+                <label>giveaway amount
+                <input 
+                type="number"
+                value={giveawayAmount}
+                onChange={(event)=>setGiveawayAmount(parseInt(event.target.value))}
                 />
                 </label>
                 
