@@ -4,7 +4,7 @@ import fs from "fs"
 import {connect} from "../db"
 import baseContract from "../../../lib/basic/contract/baseContract"
 
-export default async function creategiveaway(
+export default async function createGiveaway(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

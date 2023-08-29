@@ -12,13 +12,33 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
 
   const contractList = resp.success;
 
+  const deleteHndle = async (index:any) => {
+    console.log("click");
+    const response = await fetch("/api/dashboard/manageGiveaways/deleteGiveaways",{
+
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({index}),
+
+  });
+
+  const resp = await response.json();
+  
+
+  }
+
     return (
 
         <>
             manage
             <ul>
               {contractList.map((contract:any, index:number) => (
-                <li key={index}>{contract.contract_Name}</li>
+                <li key={index}>
+                  {contract.contract_Name}
+                  {contract.points_number}
+                  <button onClick={() => deleteHndle(index)}>delete</button>
+                  
+                </li>
               ))}
         </ul>
             
@@ -32,7 +52,7 @@ export async function getServerSideProps(context:any) {
   const cookies = JSON.parse(context.req.cookies['user']);
   const username = cookies['username'];
 
-  const response = await fetch("http://localhost:3000/api/dashboard/managegiveaways",{
+  const response = await fetch("http://localhost:3000/api/dashboard/manageGiveaways/showGiveaways",{
 
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -42,8 +62,11 @@ export async function getServerSideProps(context:any) {
 
 
   const resp = await response.json();
+  if(resp.error){
+    console.log(resp.error);
+  }
 
-   return {
+  return {
      props:{cookies,resp}
    }
    

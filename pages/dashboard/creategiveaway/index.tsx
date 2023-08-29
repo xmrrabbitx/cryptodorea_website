@@ -23,7 +23,7 @@ export default function createGiveaway(cookies:any){
 
             event.preventDefault();
 
-            const response = await fetch("/api/dashboard/creategiveaway",{
+            const response = await fetch("http://localhost:3000/api/dashboard/manageGiveaways/createGiveaway",{
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
