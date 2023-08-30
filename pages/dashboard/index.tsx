@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useRouter } from "next/router"
+//import { useRouter } from "next/router"
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ interface Data {
 
 export default function dashboard(props:any){
 
-    const router = useRouter();
+    //const router = useRouter();
 
     const [res, setRecentItem] = useState<Data>({});
 

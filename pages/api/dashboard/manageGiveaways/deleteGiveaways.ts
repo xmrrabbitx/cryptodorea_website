@@ -10,9 +10,13 @@ export default async function deleteGiveaways(
 ) {
 
     const index:number = req.body.index;
-    console.log(index);
-    //const db = await connect();
+    
+    const db = await connect();
+    const User:any = await db.query(
+      "delete user from users where id = ?",
+      [index]
+  );
 
-    return res.status(200).json({success:"okkk"});
+    return res.status(200).json({success:"contract is deleted successfully!"});
 
 }

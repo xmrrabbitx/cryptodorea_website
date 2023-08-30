@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 
 export default function index(){
 
-    const router = useRouter();
+    const useRouterPush = useRouter();
 
     const [username, setUserName] = useState("")
     const [email, setEmail] = useState("")
@@ -37,7 +37,7 @@ export default function index(){
         setStatus(res.status)
 
         setTimeout(() => {
-          router.push('/auth/signin');
+          useRouterPush.push('/auth/signin');
         }, 3000);
       
       }

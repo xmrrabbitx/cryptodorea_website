@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs"
-import {connect} from "../db"
-import baseContract from "../../../lib/basic/contract/baseContract"
+import {connect} from "../../db"
+import baseContract from "../../../../lib/basic/contract/baseContract"
 
-export default async function createGiveaway(
+export default async function createGiveaways(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

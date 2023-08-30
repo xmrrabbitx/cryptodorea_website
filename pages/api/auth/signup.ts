@@ -66,10 +66,12 @@ export default async function handle(
     }else{
 
         try{
-
+                const currentDate = new Date();
+                const currentUnixTimestamp = Math.floor(currentDate.getTime() / 1000); // Convert milliseconds to seconds
+                
                 const user = db.query(
-                    "INSERT INTO users (username,password,email) VALUES(?, ?, ?)",
-                    [username,hashedPassword,email]
+                    "INSERT INTO users (username, password, email, email_verified, plan_type, free_trial, created_at, deleted_at) VALUES(?, ?, ?, ?, ?, ?, FROM_UNIXTIME(?), FROM_UNIXTIME(?) )",
+                    [username, hashedPassword, email, 0, 'simple', 1, currentUnixTimestamp, null]
                 )
 
                 return res.status(200).json({status:"Registration successfull"});
