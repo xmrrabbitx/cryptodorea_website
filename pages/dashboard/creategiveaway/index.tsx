@@ -10,7 +10,6 @@ export default function createGiveaway(cookies:any){
     const [pointsNumber, setPointsNumber] = useState<number>();
     const [limitUsers, setLimitUsers] = useState<number>();
     const [trigerDate, setTrigerDate] = useState<number>();
-    const [deleteDate, setDeleteDate] = useState<number>();
     const [congratsText, setCongratsText] = useState("");
     const [giveawayType, setGiveawayType] = useState("");
     const [giveawayAmount, setGiveawayAmount] = useState<number>();
@@ -23,11 +22,11 @@ export default function createGiveaway(cookies:any){
 
             event.preventDefault();
 
-            const response = await fetch("http://localhost:3000/api/dashboard/manageGiveaways/createGiveaway",{
+            const response = await fetch("http://localhost:3000/api/dashboard/manageGiveaways/createGiveaways",{
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, deleteDate, congratsText, giveawayType, giveawayAmount}),
+                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText, giveawayType, giveawayAmount}),
 
             });
 
@@ -75,13 +74,6 @@ export default function createGiveaway(cookies:any){
                 type="number"
                 value={trigerDate}
                 onChange={(event)=>setTrigerDate(parseInt(event.target.value))}
-                />
-                </label>
-                <label>delete at Date
-                <input 
-                type="number"
-                value={deleteDate}
-                onChange={(event)=>setDeleteDate(parseInt(event.target.value))}
                 />
                 </label>
                 <label>congragulation text

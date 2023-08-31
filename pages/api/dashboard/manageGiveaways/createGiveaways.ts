@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs"
 import {connect} from "../../db"
 import baseContract from "../../../../lib/basic/contract/baseContract"
+import { Console } from 'console';
 
 export default async function createGiveaways(
   req: NextApiRequest,
@@ -14,15 +15,13 @@ export default async function createGiveaways(
   const pointsNumber:number = req.body.pointsNumber;
   const limitUsers:number = req.body.limitUsers;
   const trigerDate:number = req.body.trigerDate;
-  const deleteDate:number = req.body.deleteDate;
   const congratsText:string = req.body.congratsText;
   const giveawayType:string = req.body.giveawayType;
   const giveawayAmount:number = req.body.giveawayAmount;
 
-
   const db = await connect();
 
-  if(contractName && userName && pointsNumber && limitUsers){
+  if(contractName && userName && pointsNumber && limitUsers && trigerDate && congratsText && giveawayType && giveawayAmount){
 
     const hasSpecialChars = (str:string) => {
       const regex = /[`!#%^*_+\-\[\]{};':"\\|<>\/?~]/;
@@ -46,10 +45,10 @@ export default async function createGiveaways(
         "select * from contracts where user_id=(?)",
         [id]
       );
-   
+      
       for(let results of userIdCheck[0]){
         
-        if(results.contract_Name === contractName){
+        if(results.contract_name === contractName){
           
         return res.status(404).json({error:"you already have a contract with this name!!! please choose another name!"})
         
@@ -57,12 +56,15 @@ export default async function createGiveaways(
 
       }
 
+      const oneWeekInMilliseconds:number = 7 * 24 * 60 * 60 * 1000;
+      var deleteDate:number = ((trigerDate * 1000) + oneWeekInMilliseconds) / 1000;
+
       const Contracts:any = await db.query(
-        "INSERT INTO contracts  (contract_Name, points_number, user_id, limit_users, congrats_text, triger_date, created_at, deleted_at,giveaway_type, giveaway_amount) VALUES(?, ?, ?, ?, ?, FROM_UNIXTIME(?), NOW(), FROM_UNIXTIME(?), ?, ?)",
-                                [contractName, pointsNumber, id, limitUsers, congratsText, trigerDate, deleteDate, giveawayType, giveawayAmount]
+        "INSERT INTO contracts  (contract_Name, points, user_id, limit_users, congrats_text, giveaway_type, giveaway_amount, triger_date, created_at, deleted_at) VALUES(?, ?, ?, ?, ?, ?, ?, FROM_UNIXTIME(?), NOW(), FROM_UNIXTIME(?))",
+                                [contractName, pointsNumber, id, limitUsers, congratsText, giveawayType, giveawayAmount, trigerDate, deleteDate]
       );
 
-      return res.status(404).json({success:"your contract is created successful!"})
+      return res.status(200).json({success:"your contract is created successful!"})
         
 
     }
