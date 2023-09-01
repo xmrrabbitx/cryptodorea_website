@@ -1,4 +1,3 @@
-import { forEach } from "lodash";
 import { useState, useEffect, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal } from 'react'
 
 interface ManageGiveawaysProps {
@@ -12,13 +11,13 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
 
   const contractList = resp.success;
 
-  const deleteHndle = async (index:any) => {
-    console.log("click");
+  const deleteHndle = async (id:any) => {
+   
     const response = await fetch("/api/dashboard/manageGiveaways/deleteGiveaways",{
 
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({index}),
+      body: JSON.stringify({id}),
 
   });
 
@@ -34,9 +33,9 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
             <ul>
               {contractList.map((contract:any, index:number) => (
                 <li key={index}>
-                  {contract.contract_Name}
+                  {contract.contract_name}
                   {contract.points_number}
-                  <button onClick={() => deleteHndle(index)}>delete</button>
+                  <button onClick={() => deleteHndle(contract.id)}>delete</button>
                   
                 </li>
               ))}

@@ -1,4 +1,3 @@
-import { forEach } from "lodash";
 import { useState, useEffect } from 'react'
 
 
@@ -22,6 +21,9 @@ export default function createGiveaway(cookies:any){
 
             event.preventDefault();
 
+            let date = new Date();
+            let currentTime = date.getTime();
+
             const response = await fetch("http://localhost:3000/api/dashboard/manageGiveaways/createGiveaways",{
 
                 method: "POST",
@@ -36,7 +38,22 @@ export default function createGiveaway(cookies:any){
                 setError(resp.error);
             }else{
                 setRes(resp.success);
+
+                const response = await fetch("http://localhost:3000/api/dashboard/solidity/createSol",{
+
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({username, contractName, currentTime}),
+
+                });
+
+                const res = await response.json();
+                console.log(res);
+
+
             }
+
+        
 
         }
 

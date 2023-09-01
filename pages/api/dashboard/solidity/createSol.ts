@@ -2,24 +2,25 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs"
 
-type Data = {
-  response: string
-}
 
-export default function handler(
+export default async function createSol(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
 
-  const username = req.query.username;
-  const dateTime = req.query.dateTime;
-  const contractName = req.query.contractName;
+  const username:any = req.query.username;
+  const contractName:any = req.query.contractName;
+  const dateTime:any = req.query.currentTime;
 
+  console.log(req.query);
 
   function creatSol(){
 
     return `// SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
+
+
+
     `;
   
   }
