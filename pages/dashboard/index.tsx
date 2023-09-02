@@ -12,7 +12,7 @@ interface Data {
     [key: string]: string;
 }
 
-export default function dashboard(props:any){
+export default function Dashboard(props:any){
 
     //const router = useRouter();
 

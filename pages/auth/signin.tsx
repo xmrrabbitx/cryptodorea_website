@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router"
 import Cookies from 'js-cookie';
 
-export default function Home() {
+export default function Signin() {
 
   const router = useRouter();
   

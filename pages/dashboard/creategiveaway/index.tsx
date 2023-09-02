@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 
-export default function createGiveaway(cookies:any){
+export default function CreateGiveaway(cookies:any){
 
     const username = cookies.cookies.username
 

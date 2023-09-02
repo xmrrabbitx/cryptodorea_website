@@ -32,7 +32,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.11.1",
-    "solc": "^0.8.19",
+    "solc": "^0.8.21",
+    "types-solc": "^1.0.1",
     "typescript": "5.0.3"
   },
   "devDependencies": {

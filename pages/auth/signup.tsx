@@ -2,9 +2,9 @@ import { useState } from "react"
 import { useRouter } from "next/router"
 
 
-export default function index(){
+export default function Signup(){
 
-    const useRouterPush = useRouter();
+    const router = useRouter();
 
     const [username, setUserName] = useState("")
     const [email, setEmail] = useState("")
@@ -37,7 +37,7 @@ export default function index(){
         setStatus(res.status)
 
         setTimeout(() => {
-          useRouterPush.push('/auth/signin');
+          router.push('/auth/signin');
         }, 3000);
       
       }

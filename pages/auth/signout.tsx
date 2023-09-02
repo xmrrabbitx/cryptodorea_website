@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import { useEffect } from 'react';
 import Cookies from "js-cookie";
 
-export default function Home() {
+export default function Signout() {
 
   const router = useRouter();
 
