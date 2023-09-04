@@ -30,6 +30,7 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
 
         <>
             manage
+            
             <ul>
               {contractList.map((contract:any, index:number) => (
                 <li key={index}>
@@ -39,7 +40,7 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
                   
                 </li>
               ))}
-        </ul>
+            </ul>
             
         </>
     )
