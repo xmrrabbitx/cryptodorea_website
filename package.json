@@ -29,12 +29,14 @@
     "next": "13.2.4",
     "next-auth": "^4.21.1",
     "next-connect": "^1.0.0",
+    "path": "^0.12.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.11.1",
     "solc": "^0.8.21",
     "types-solc": "^1.0.1",
-    "typescript": "5.0.3"
+    "typescript": "5.0.3",
+    "web3": "^4.1.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

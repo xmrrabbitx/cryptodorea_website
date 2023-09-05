@@ -1,7 +1,4 @@
 import { useState, useEffect } from 'react'
-import BaseContract from '@/lib/basic/contracts/BaseContract'
-import Compiler from '@/lib/sloc/Compiler'
-
 
 interface deployGiveawaysProps {
   cookies: any; 
@@ -13,13 +10,13 @@ export default function deploy({cookies,resp}:deployGiveawaysProps){
 
   const contractList = resp.success;
  
-    const hndlDeploy = async (contractName:string) => {
+    const hndlDeploy = async () => {
 
       const response = await fetch("/api/dashboard/solidity/deployContract",{
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({contractName}),
+        //body: JSON.stringify(),
   
     });
   
@@ -39,7 +36,7 @@ export default function deploy({cookies,resp}:deployGiveawaysProps){
                   {contract.contract_name}
                   {contract.points_number}
                   
-                  <button onClick={() => hndlDeploy(contract.contract_name)}>click</button>
+                  <button onClick={() => hndlDeploy()}>click</button>
 
                 </li>
               ))}
@@ -70,7 +67,7 @@ export async function getServerSideProps(context:any) {
   if(resp.error){
     console.log(resp.error);
   }
-console.log(resp);
+
   return {
      props:{cookies,resp}
    }

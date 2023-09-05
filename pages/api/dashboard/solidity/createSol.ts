@@ -1,7 +1,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs"
-import BaseContract from '@/lib/basic/contracts/BaseContract';
+import path from 'path';
 import Compiler from '@/lib/sloc/Compiler';
 
 export default async function createSol(
@@ -12,6 +12,9 @@ export default async function createSol(
   const username:any = req.body.username;
   const contractName:any = req.body.contractName;
   const dateTime:any = req.body.currentTime;
+
+  //const solPath = path.resolve("./basic/contracts","Vote.sol")
+  //const sourceContractSol  = fs.readFileSync(solPath)
 
   const path = "./web3/contracts";
 

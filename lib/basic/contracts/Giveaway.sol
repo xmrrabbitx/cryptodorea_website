@@ -1,10 +1,7 @@
-export default function BaseContract (contraName:string){
-
-return `
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >= 0.4.0 < 0.9.0;
 
-contract ${contraName} {
+contract Giveaway {
 
       uint votes;
 
@@ -17,9 +14,6 @@ contract ${contraName} {
       
         return votes;
       }
-
-}
-              `;
 
 }
 
