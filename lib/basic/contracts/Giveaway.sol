@@ -7,7 +7,7 @@ contract Giveaway {
 
       constructor(){
 
-        votes = 1;
+        votes = 1234;
       }
 
       function show() public view returns(uint){
@@ -16,4 +16,3 @@ contract Giveaway {
       }
 
 }
-

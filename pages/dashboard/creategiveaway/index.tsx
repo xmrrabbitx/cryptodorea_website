@@ -10,8 +10,7 @@ export default function CreateGiveaway(cookies:any){
     const [limitUsers, setLimitUsers] = useState<number>();
     const [trigerDate, setTrigerDate] = useState<number>();
     const [congratsText, setCongratsText] = useState("");
-    const [giveawayType, setGiveawayType] = useState("");
-    const [giveawayAmount, setGiveawayAmount] = useState<number>();
+
    
 
     const [res, setRes] = useState("");
@@ -28,7 +27,7 @@ export default function CreateGiveaway(cookies:any){
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText, giveawayType, giveawayAmount}),
+                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText}),
 
             });
 
@@ -98,20 +97,6 @@ export default function CreateGiveaway(cookies:any){
                 type="text"
                 value={congratsText}
                 onChange={(event)=>setCongratsText(event.target.value)}
-                />
-                </label>
-                <label>giveaway type
-                <input 
-                type="text"
-                value={giveawayType}
-                onChange={(event)=>setGiveawayType(event.target.value)}
-                />
-                </label>
-                <label>giveaway amount
-                <input 
-                type="number"
-                value={giveawayAmount}
-                onChange={(event)=>setGiveawayAmount(parseInt(event.target.value))}
                 />
                 </label>
                 

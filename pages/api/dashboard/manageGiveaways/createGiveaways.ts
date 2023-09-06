@@ -1,9 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// save giveaway info into mysql DB
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs"
 import {connect} from "../../db"
-import baseContract from "../../../../lib/basic/contracts/giveawayContracts"
-import { Console } from 'console';
 
 export default async function createGiveaways(
   req: NextApiRequest,
@@ -16,12 +14,10 @@ export default async function createGiveaways(
   const limitUsers:number = req.body.limitUsers;
   const trigerDate:number = req.body.trigerDate;
   const congratsText:string = req.body.congratsText;
-  const giveawayType:string = req.body.giveawayType;
-  const giveawayAmount:number = req.body.giveawayAmount;
 
   const db = await connect();
 
-  if(contractName && userName && pointsNumber && limitUsers && trigerDate && congratsText && giveawayType && giveawayAmount){
+  if(contractName && userName && pointsNumber && limitUsers && trigerDate && congratsText){
 
     const hasSpecialChars = (str:string) => {
       const regex = /[`!#%^*_+\-\[\]{};':"\\|<>\/?~]/;
@@ -61,11 +57,32 @@ export default async function createGiveaways(
 
       const Contracts:any = await db.query(
         "INSERT INTO contracts  (contract_Name, points, user_id, limit_users, congrats_text, giveaway_type, giveaway_amount, triger_date, created_at, deleted_at) VALUES(?, ?, ?, ?, ?, ?, ?, FROM_UNIXTIME(?), NOW(), FROM_UNIXTIME(?))",
-                                [contractName, pointsNumber, id, limitUsers, congratsText, giveawayType, giveawayAmount, trigerDate, deleteDate]
+                                [contractName, pointsNumber, id, limitUsers, congratsText, null, null, trigerDate, deleteDate]
       );
 
-      return res.status(200).json({success:"your contract is created successful!"})
-        
+      if(Contracts){
+       
+          const deployRequest = await fetch("http://localhost:3000/api/dashboard/solidity/deployContract",{
+      
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            //body: JSON.stringify(),
+      
+          });
+          const deployResponse = await deployRequest.json();
+
+          if(deployResponse['success']){
+
+            return res.status(200).json({success:"your contract is created and deployed successful!"})
+       
+
+          }else if(deployResponse['error']){
+
+            return res.status(403).json({error:deployResponse['error']});
+
+          }
+
+      } 
 
     }
   

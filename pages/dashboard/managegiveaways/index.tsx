@@ -26,6 +26,17 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
 
   }
 
+  const deployHndle = async () => {
+
+    const response = await fetch("/api/dashboard/solidity/deployContract",{
+
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      //body: JSON.stringify(),
+
+    });
+  }
+
     return (
 
         <>
@@ -37,7 +48,7 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
                   {contract.contract_name}
                   {contract.points_number}
                   <button onClick={() => deleteHndle(contract.id)}>delete</button>
-                  
+                  <button onClick={() => deployHndle()}>deploy</button>
                 </li>
               ))}
             </ul>
@@ -58,7 +69,7 @@ export async function getServerSideProps(context:any) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({username}),
 
-});
+  });
 
 
   const resp = await response.json();
@@ -70,4 +81,4 @@ export async function getServerSideProps(context:any) {
      props:{cookies,resp}
    }
    
- }
+}

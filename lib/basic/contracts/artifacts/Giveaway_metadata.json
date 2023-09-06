@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "show",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"basic/contracts/Giveaway.sol": "Giveaway"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"basic/contracts/Giveaway.sol": {
+			"keccak256": "0x5c9f43f40740546bccbd6f730abed00019fd5ebf8ae57ffc2f5a16cf55e46b97",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://dac2357d64b99cecf2263adee43aedde64eba8a5809ddce955a96d5ee37f5349",
+				"dweb:/ipfs/QmaxUr26ucKdHriBRFCELxTREdjHHETkUiSn5DLyCNf2of"
+			]
+		}
+	},
+	"version": 1
+}
