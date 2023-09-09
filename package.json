@@ -18,6 +18,7 @@
     "cookies": "^0.8.0",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
+    "dvote-polygon": "^1.0.0",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "js-cookie": "^3.0.5",
@@ -35,7 +36,6 @@
     "react-router-dom": "^6.11.1",
     "solc": "^0.8.21",
     "types-solc": "^1.0.1",
-    "typescript": "5.0.3",
     "web3": "^4.1.1"
   },
   "devDependencies": {
@@ -45,6 +45,8 @@
     "@types/lodash": "^4.14.192",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2"
   }
 }

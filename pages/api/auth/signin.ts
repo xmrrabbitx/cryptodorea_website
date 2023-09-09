@@ -57,7 +57,7 @@ export default async function handle(
                     
                     const secretKey:any = process.env.JwtSecretKey
 
-                    const tokenObj = {username:user["username"],email:user["email"]}
+                    const tokenObj = {username:user["username"],email:user["email"],planType:user["plan_type"]}
                         
                     const jwtToken = jwt.sign(tokenObj,secretKey, { expiresIn: '1h' });
                     

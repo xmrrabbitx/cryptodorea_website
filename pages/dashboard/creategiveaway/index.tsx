@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 export default function CreateGiveaway(cookies:any){
 
     const username = cookies.cookies.username
+    const planType = cookies.cookies.planType
 
     const [contractName, setContractName] = useState("");
     const [pointsNumber, setPointsNumber] = useState<number>();
@@ -27,7 +28,7 @@ export default function CreateGiveaway(cookies:any){
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText}),
+                body: JSON.stringify({ contractName, username, pointsNumber, limitUsers, trigerDate, congratsText, planType}),
 
             });
 
@@ -37,22 +38,7 @@ export default function CreateGiveaway(cookies:any){
                 setError(resp.error);
             }else{
                 setRes(resp.success);
-
-                const response = await fetch("http://localhost:3000/api/dashboard/solidity/createSol",{
-
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({username, contractName, currentTime}),
-
-                });
-
-                const res = await response.json();
-                console.log(res);
-
-
             }
-
-        
 
         }
 

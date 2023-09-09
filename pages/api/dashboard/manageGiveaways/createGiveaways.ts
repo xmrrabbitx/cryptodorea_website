@@ -14,6 +14,7 @@ export default async function createGiveaways(
   const limitUsers:number = req.body.limitUsers;
   const trigerDate:number = req.body.trigerDate;
   const congratsText:string = req.body.congratsText;
+  const planType:string = req.body.planType;
 
   const db = await connect();
 
@@ -61,14 +62,15 @@ export default async function createGiveaways(
       );
 
       if(Contracts){
-       
+
           const deployRequest = await fetch("http://localhost:3000/api/dashboard/solidity/deployContract",{
       
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            //body: JSON.stringify(),
+            body: JSON.stringify({userName,planType, contractName}),
       
           });
+
           const deployResponse = await deployRequest.json();
 
           if(deployResponse['success']){

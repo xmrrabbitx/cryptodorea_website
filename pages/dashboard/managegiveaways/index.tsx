@@ -7,9 +7,13 @@ interface ManageGiveawaysProps {
 
 export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
 
-  const username = cookies.username
+  const userName = cookies.username
+  const planType = cookies.planType
 
   const contractList = resp.success;
+
+
+
 
   const deleteHndle = async (id:any) => {
    
@@ -32,7 +36,7 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
 
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      //body: JSON.stringify(),
+      body: JSON.stringify({userName,planType}),
 
     });
   }
@@ -52,6 +56,7 @@ export default function manageGiveaways({cookies,resp}:ManageGiveawaysProps){
                 </li>
               ))}
             </ul>
+
             
         </>
     )
@@ -73,10 +78,7 @@ export async function getServerSideProps(context:any) {
 
 
   const resp = await response.json();
-  if(resp.error){
-    console.log(resp.error);
-  }
-
+  
   return {
      props:{cookies,resp}
    }
