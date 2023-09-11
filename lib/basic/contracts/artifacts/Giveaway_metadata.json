@@ -11,12 +11,130 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [],
-				"name": "show",
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_giveawayCode",
+						"type": "uint256"
+					}
+				],
+				"name": "addWinner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_giveawayCode",
+						"type": "uint256"
+					}
+				],
+				"name": "checkUser",
 				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showWinner",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "userAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "giveawayCode",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Giveaway.UserData[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "usersData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "giveawayCode",
 						"type": "uint256"
 					}
 				],
@@ -39,7 +157,7 @@
 		"compilationTarget": {
 			"basic/contracts/Giveaway.sol": "Giveaway"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "homestead",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -52,11 +170,11 @@
 	},
 	"sources": {
 		"basic/contracts/Giveaway.sol": {
-			"keccak256": "0x5c9f43f40740546bccbd6f730abed00019fd5ebf8ae57ffc2f5a16cf55e46b97",
+			"keccak256": "0x38b9e82e9796d006cc803a74bfb31012706d86314d1145e0bc49d2515eec8294",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://dac2357d64b99cecf2263adee43aedde64eba8a5809ddce955a96d5ee37f5349",
-				"dweb:/ipfs/QmaxUr26ucKdHriBRFCELxTREdjHHETkUiSn5DLyCNf2of"
+				"bzz-raw://0cd9e159e1be590ee384ef4143459e56f0ec4d25e77aa502b9bb4573f2b3db5c",
+				"dweb:/ipfs/QmQ7oPd1wbbGYuXTo48khRXKbazHc81mxtnEHWTB9Dv6BF"
 			]
 		}
 	},

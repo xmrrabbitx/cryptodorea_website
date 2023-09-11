@@ -1,1 +1,0 @@
-{"address":"0x51295140B3235D98bBC5fBd99F35517b9C4744e7","jsonInterface":[{"inputs":[],"stateMutability":"nonpayable","type":"constructor","signature":""},{"inputs":[],"name":"show","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function","signature":"0xcc80f6f3","constant":true,"payable":false}]}
