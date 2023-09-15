@@ -74,68 +74,25 @@
 			},
 			{
 				"inputs": [],
-				"name": "showWinner",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "email",
-								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "userAddress",
-								"type": "address"
-							},
-							{
-								"internalType": "uint256",
-								"name": "giveawayCode",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct Giveaway.UserData[]",
-						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
+				"name": "pay",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
 					}
 				],
-				"name": "usersData",
+				"name": "showWinner",
 				"outputs": [
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "email",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "userAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "giveawayCode",
-						"type": "uint256"
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -157,7 +114,7 @@
 		"compilationTarget": {
 			"basic/contracts/Giveaway.sol": "Giveaway"
 		},
-		"evmVersion": "homestead",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -170,11 +127,11 @@
 	},
 	"sources": {
 		"basic/contracts/Giveaway.sol": {
-			"keccak256": "0x38b9e82e9796d006cc803a74bfb31012706d86314d1145e0bc49d2515eec8294",
+			"keccak256": "0xf1e0e06a3cc83150a4a75734a0b511961c0fe442b7a3aa44072833251c8e4bad",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0cd9e159e1be590ee384ef4143459e56f0ec4d25e77aa502b9bb4573f2b3db5c",
-				"dweb:/ipfs/QmQ7oPd1wbbGYuXTo48khRXKbazHc81mxtnEHWTB9Dv6BF"
+				"bzz-raw://9d577531d0e647aea783d0a40e49b8cae8a2e795966955241ef613d05991f459",
+				"dweb:/ipfs/QmcLLFDHbCMdqXQzzm1QnWyQDVWh374UeGKqWTtgwodmJG"
 			]
 		}
 	},

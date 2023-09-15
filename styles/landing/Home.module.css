@@ -1,0 +1,24 @@
+@font-face {
+    font-family:Poppins-semiBold;
+    src: url("../../public/fonts/Poppins/Poppins-SemiBold.ttf");
+    font-family:Poppins-Bold;
+    src: url("../../public/fonts/Poppins/Poppins-Bold.ttf");
+    font-family:Poppins-ExtraBold;
+    src: url("../../public/fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+
+.titleHeader{
+    font-family: Poppins-Bold;
+ 
+}
+
+.titleMain{
+    font-family:Poppins-Bold;
+    color: rgb(53, 53, 53);
+}
+
+.titleMainPic {
+
+    width: 500px;
+    height: 450px;
+}

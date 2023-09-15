@@ -3,7 +3,7 @@ pragma solidity >= 0.4.0 < 0.9.0;
 
 contract Giveaway {
 
-    struct UserData {
+      struct UserData {
         string name;
         string email;
         address userAddress;
@@ -11,7 +11,7 @@ contract Giveaway {
     }
 
     address private owner;
-    UserData[] public usersData;
+    UserData[] internal usersData;
 
     constructor(){
 
@@ -35,13 +35,14 @@ contract Giveaway {
       return false;
     } 
 
-    function addWinner(string memory _name, string memory _email,address _userAddress, uint256  _giveawayCode) public {
+    function addWinner(string memory _name, string memory _email,address _userAddress, uint256  _giveawayCode, string memory _uniqueId) public {
 
       UserData memory winnerUser = UserData({
         name: _name,
         email: _email,
         userAddress: _userAddress,
-        giveawayCode: _giveawayCode
+        giveawayCode: _giveawayCode,
+        uniqueId: _uniqueId
       });
 
       usersData.push(winnerUser);
@@ -49,9 +50,28 @@ contract Giveaway {
     }
 
 
-    function showWinner() public view returns(UserData[] memory){
+    function showWinner(string memory _name) public view returns(bool){
+      
+      for(uint256 i =0; i < usersData.length; i++){
 
-      return usersData;
+        UserData storage user = usersData[i];
+        if(keccak256(bytes(_name)) == keccak256(bytes(user.name))){
+
+        return true;
+
+        }
+      }
+
+      return false;
 
     }
+
+
+    function pay() public {
+
+
+
+
+    }
+
 }

@@ -1,0 +1,29 @@
+import Image from 'next/image'
+import Logo from "@/public/logos/DoreaLogo.png"
+import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
+
+export default function Header(){
+
+    return(
+        <header>
+
+            <div className='container max-w-full'>
+                <div className='grid grid-cols-2 gap-1 mt-10'> 
+
+                    <div className='w-12/12 pl-20 flex flow-row'>
+                        <div className='w-12/12 basis-15'>
+                            <Image className="inline" src={Logo} alt="no logo" width={50}  height={50} />
+                        </div>
+                        <div className='ml-3 mt-3.5 items-center basis-1'>
+                            <span className={`${styles.titleHeader}`}>Crypto</span>
+                            <span className={`${styles.titleHeader} text-orange-500 ml-1`}>Dorea</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+    )
+}
