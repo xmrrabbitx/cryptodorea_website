@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Logo from "@/public/logos/DoreaLogo.png"
+import Logo from "@/public/logos/doreaLogo.svg"
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 

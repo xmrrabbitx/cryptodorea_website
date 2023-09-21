@@ -1,13 +1,38 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '@/styles/landing/Home.module.css'
-import titleMainPic from "@/public/pics/titleMain.png"
+import titleMainPic from "@/public/pics/titleCryptoPic.svg"
+import BitcoinPic from "@/public/pics/Bitcoin.svg"
+import EthPic from "@/public/pics/Eth.svg"
 import Cookies from 'js-cookie';
+import { useState, useEffect } from 'react';
+
+
+const images = [
+  'productSample1.svg',
+  'productSample2.svg',
+  'productSample3.svg',
+  'productSample4.svg',
+];
 
 export default function Home(props:any) {
 
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(():any => {
+    const interval = setInterval(() => {
+      if(currentImage > 3){
+        setCurrentImage(0);
+      }
+      setCurrentImage((prevImage) => (prevImage + 1));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  });
+
   return (
-    <>
+    <div>
 
       <Head>
         <title>Crypto Dorea: next generation crypto loyalty program</title>
@@ -20,28 +45,96 @@ export default function Home(props:any) {
 
         <div className='container max-w-full'>
 
-          <div className='grid grid-cols-2 gap-1 mt-10'> 
+          <div className='grid grid-cols-2 gap-1'> 
             <div className='w-12/12 pl-28'>
-              <p className={`${styles.titleMain} text-6xl`}>
+              <p className={`${styles.titleMain} text-6xl mt-36`}>
                 Crypto Giveaways <br />
-                for hyping users
+                to Loyal Customers
               </p>
-              <p>
-                create crypto loyalty program for your business
+              <p className="text-1xl mt-4">
+                Create Crypto Loyalty Program for your Business
               </p>
-              <p>
-                <span>get paid on:</span>
-                <span></span>
+              <p className='flex mt-4'>
+                <span className='pt-1'>get paid on:</span>
+                <span><Image className='ml-2' src={BitcoinPic} alt='no bitcoin image' width={35} height={35} /></span>
+                <span><Image className='ml-2' src={EthPic} alt='no Ethereum image' width={35} height={35} /></span>
               </p>
+              <div>
+                  <button id={styles.joinButtonTitle} className="w-12/12 pt-2 pb-2 text-center mt-3">
+                      Join Waitlist
+                  </button>
+              </div>
               <div>
                   <div></div>
               </div>
             </div>
-            <div className='w-12/12 pl-5 flex flow-row'>
-              <div>
-                <Image className={styles.titleMainPic} src={titleMainPic} alt='no title image available' />  
+            <div className={` w-12/12 pr-10 flex flow-row justify-center items-center`}>
+              <div className=''>
+                <Image className={`${styles.titleMainPic}`} src={titleMainPic} alt='no title image available' />  
               </div>
             </div>
+          </div>
+
+          <div className='grid grid-cols-5 gap-16 mt-20'>
+            <div className='w-12/12'></div>
+            <div className='w-12/12'>
+              <div className={`${styles.percentsNumbers} text-center text-6xl`}>21%</div>
+              <div className={`${styles.percentsDescription} text-center text-1xl`}>of Americans own Cryptocurrency</div>
+            </div>
+            <div className='w-12/12 '>
+              <div className={`${styles.percentsNumbers} text-center text-6xl`}>2K</div>
+              <div className={`${styles.percentsDescription} text-center text-1xl`}>Approximately 2,300 businesses accept Bitcoin in the U.S</div>
+            </div>
+            <div className='w-12/12 '>
+            <div className={`${styles.percentsNumbers} text-center text-6xl`}>45M</div>
+              <div className={`${styles.percentsDescription} text-center text-1xl`}>of Americans use crypto</div>
+            </div>
+            <div className='w-12/12 '></div>
+
+          </div>
+
+          <div className='grid grid-cols-5 gap-16 mt-16'>
+            <div className='w-12/12'></div>
+            <div className='w-12/12'></div>
+            <div className={`${styles.and} w-12/12 text-center text-6xl`}>and</div>
+            <div className='w-12/12'></div>
+            <div className='w-12/12'></div>
+          </div>
+
+          <div className='grid grid-cols-4 gap-1 mt-16'> 
+            <div className='w-12/12'></div>
+            <div className='w-12/12 text-right text-9xl pr-10'> 
+              <span className={styles.percentsNumbers}>90%</span>
+            </div>
+            <div className='w-12/12 text-left text-xl pt-8 font-bold'>
+                <span className={styles.percentsDescription}>of American companies have some sort of Loyalty program. (<a className='text-orange-400 hover:text-orange-300' href="https://www.accenture.com/">Accensture</a>)</span>
+            </div>
+            <div className='w-12/12'></div>
+          </div>
+
+          <div className='grid grid-cols-2 gap-1 mt-28'> 
+            <div className='w-12/12 pl-28 mt-24'>
+              <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>What is Crypto Dorea?</p>
+              <div id={styles.doreaDefinition} className='mt-5 ml-14 pr-3 pl-7 pt-7 pb-7 rounded-md'>
+                <p id={styles.doreaDefinitionText} className='text-lg font-bold'>Crypto Dorea is the new way of Loyalty Program brougth to your business using auto pay system powered by smart contract.</p>
+              </div>
+            </div>
+            <div className='w-12/12'>
+              <div className="image-slider">
+                {currentImage}
+                  {images.map((image, index) => (
+                    <Image
+                      key={index}
+                      src={`${src}${image}`}
+                      alt={`Image ${index + 1}`}
+                      className={`${index === currentImage ? styles.slideVisible : styles.slideHidden} ${styles.slideshow} `}
+                      width={100}
+                      height={100}
+                      quality={100}
+                    />
+                  ))}
+                </div>
+              </div>
           </div>
 
         </div>
@@ -49,7 +142,7 @@ export default function Home(props:any) {
 
       </main>
 
-    </>
+    </div>
   )
 }
 
@@ -60,4 +153,5 @@ export async function getServerSideProps() {
   }
   
 }
+
 

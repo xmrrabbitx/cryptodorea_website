@@ -1,4 +1,6 @@
 @font-face {
+    font-family:Poppins-Medium;
+    src: url("../../public/fonts/Poppins/Poppins-Medium.ttf");
     font-family:Poppins-semiBold;
     src: url("../../public/fonts/Poppins/Poppins-SemiBold.ttf");
     font-family:Poppins-Bold;
@@ -15,10 +17,91 @@
 .titleMain{
     font-family:Poppins-Bold;
     color: rgb(53, 53, 53);
+    
 }
 
 .titleMainPic {
 
-    width: 500px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
 }
+
+.borderStyle{
+    border: outset ;
+    border-style: dashed;
+    border-color: rgb(116, 116, 116);
+    border-width: 2.2px;
+    border-radius: 5px;
+    
+}
+
+.percentsNumbers{
+    font-family: Poppins-Bold;
+    color: rgb(32, 32, 32);
+}
+
+.percentsDescription{
+    font-weight: bold;
+    color: rgb(62, 62, 62);
+}
+
+.and{
+
+    font-family: Poppins-Bold;
+    color: rgb(150, 150, 150);
+}
+
+#joinButtonTitle{
+
+    width:130px;
+    border-radius: 8px;
+    background-color: #FACA43;
+   
+}
+#joinButtonTitle:hover{
+
+    background-color: #faa143;
+   
+}
+
+.joinButtonTitleText{
+    font-family:Poppins-Bold ;
+    color: rgb(32, 32, 32);
+}
+
+#doreaDefinitionTitle{
+    color: rgb(32, 32, 32);
+}
+
+#doreaDefinition{
+
+    background-color: #f0f0f0;
+}
+
+#doreaDefinitionText{
+
+    color: rgb(62, 62, 62);
+
+}
+
+.image-slider {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .slideVisible {
+    opacity: 1;
+  }
+
+  .slideHidden {
+    opacity: 0;
+  }
