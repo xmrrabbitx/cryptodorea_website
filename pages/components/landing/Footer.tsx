@@ -17,13 +17,12 @@ export default function Footer(){
               <p  className='text-xl'>Community</p>
               <div className='flex flex-grid items-center justify-center gap-2 pt-2'>
               
-              <a href="https://linkedin.com/cryptodorea" >
-                <Image className="" width={30} height={30} src={TwitterLogo} alt="Twitter logo" />
-              </a>
-              <a href="https://x.com/cryptodorea" >
-                <Image className='' width={30} height={30} src={LinkedinLogo} alt="Linkedin logo" />
-              </a>
-              
+                <a href="https://linkedin.com/cryptodorea" >
+                  <Image className="" width={30} height={30} src={TwitterLogo} alt="Twitter logo" />
+                </a>
+                <a href="https://x.com/cryptodorea" >
+                  <Image className='' width={30} height={30} src={LinkedinLogo} alt="Linkedin logo" />
+                </a>
               
               </div>
             </div>

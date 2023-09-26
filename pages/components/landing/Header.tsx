@@ -9,11 +9,11 @@ export default function Header(){
         <header>
 
             <div className='container max-w-full'>
-                <div className='grid grid-cols-2 gap-1 mt-10'> 
+                <div className='grid grid-cols-1 gap-1 mt-10'> 
 
                     <div className='w-12/12 pl-20 flex flow-row'>
                         <div className='w-12/12 basis-15'>
-                            <Image className="inline" src={Logo} alt="no logo" width={50}  height={50} />
+                            <Image className="xl:w-12 lg:w-12 md:w-12 sm:w-12 w-12" src={Logo} alt="no logo"  />
                         </div>
                         <div className='ml-3 mt-3.5 items-center basis-1'>
                             <span className={`${styles.titleHeader}`}>Crypto</span>
