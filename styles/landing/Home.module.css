@@ -22,8 +22,8 @@
 
 .titleMainPic {
 
-    width: 550px;
-    height: 550px;
+   
+    
 }
 
 .borderStyle{
@@ -54,7 +54,7 @@
 #joinButtonAnchore{
 
     width:130px;
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: #FACA43;
    
 }

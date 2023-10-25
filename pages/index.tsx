@@ -5,6 +5,7 @@ import styles from '@/styles/landing/Home.module.css'
 import titleMainPic from "@/public/pics/titleCryptoPic.svg"
 import BitcoinPic from "@/public/pics/Bitcoin.svg"
 import EthPic from "@/public/pics/Eth.svg"
+import s from "@/public/pics/s.svg"
 import productsample1 from "@/public/pics/productSample_1.svg"
 import Cookies from 'js-cookie';
 import { useState, useEffect, useRef  } from 'react';
@@ -31,7 +32,7 @@ export default function Home(props:any) {
         setCurrentImage(-1);
       }
         setCurrentImage((prevImage) => (prevImage + 1));
-      console.log(currentImage)
+
     }, 3000);
 
     return () => clearInterval(interval);
@@ -48,42 +49,42 @@ export default function Home(props:any) {
         <link rel="icon" href="/doreaLogo.ico" />
       </Head>
 
-      <main>
+      <main className='mt-5'>
 
         <div className='container max-w-full'>
 
-          <div className='grid grid-cols-2 gap-1'> 
-            <div className='w-12/12 pl-28'>
-              <p className={`${styles.titleMain} xl:text-6xl lg:text-4xl md:text-3xl mt-36`}>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-1'> 
+            <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
+              <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-28 mt-10`}>
                 Crypto Giveaways <br />
                 to Loyal Customers
               </p>
-              <p className="text-1xl mt-6">
+              <p className="text-sm mt-6 ">
                 Create Crypto Loyalty Program for your Business
               </p>
               <p className='flex mt-4'>
-                <span className='pt-1'>get paid on:</span>
-                <span><Image className='ml-2' src={BitcoinPic} alt='no bitcoin image' width={35} height={35} /></span>
-                <span><Image className='ml-2' src={EthPic} alt='no Ethereum image' width={35} height={35} /></span>
+                <span className='pt-1 text-sm'>get paid on:</span>
+                <span><Image className='ml-2 xl:w-8 w-7' src={BitcoinPic} alt='Bitcoin image' width={35} height={35} /></span>
+                <span><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></span>
               </p>
               <div>
-                  <button id={styles.joinButtonAnchore} className="w-12/12 pt-2 pb-2 text-center mt-5">
+                  <button id={styles.joinButtonAnchore} className="w-12/12  p-3 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
                       Join Waitlist
                   </button>
-                  <input type='text' placeholder='your email address...' className='text-base w-60 ml-3 pl-4 p-2   border-2 border-solid border-gray-300 rounded-lg'  />
+                  <input type='text' placeholder='your email address...' className='text-sm w-60 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
               </div>
               <div>
                   <div></div>
               </div>
             </div>
             <div className={` w-12/12 pr-10 flex flow-row justify-center items-center`}>
-              <div className=''>
-                <Image className={`${styles.titleMainPic} xl:w-90 lg:w-85 md:w-80 sm:60`} src={titleMainPic} alt='no title image available' />  
+              <div className='flex flow-row justify-center items-center'>
+                <Image className={`${styles.titleMainPic} xl:mt-5 2xl:w-full xl:w-11/12 lg:w-full md:w-96 sm:60 xl:block lg:block md:block sm:block hidden`} src={titleMainPic} alt='title image' width={550} height={550} />  
               </div>
             </div>
           </div>
 
-          <div className='grid grid-cols-5 gap-16 mt-28'>
+          <div className='grid grid-cols-5 gap-16 mt-36'>
             <div className='w-12/12'></div>
             <div className='w-12/12'>
               <div className={`${styles.percentsNumbers} text-center text-6xl`}>21%</div>
@@ -131,7 +132,7 @@ export default function Home(props:any) {
                 <p id={styles.doreaDefinitionText} className='text-lg font-bold'>Crypto Dorea is the new way of Loyalty Program brougth to your business using auto pay system powered by smart contract.</p>
               </div>
             </div>
-            <div className='w-12/12'>
+            <div className='w-12/12 grid grid-cols-2'>
               <div className="image-slider pl-20"> 
                 
                   {images.map((image, index) => (
@@ -145,8 +146,9 @@ export default function Home(props:any) {
                       quality={100}
                     />
                   ))}
-
+                 
                 </div>
+                <Image src={s} alt='aa' />
               </div>
           </div>
 
