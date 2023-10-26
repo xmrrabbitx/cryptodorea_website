@@ -59,7 +59,7 @@ export default function Home(props:any) {
                 Crypto Giveaways <br />
                 to Loyal Customers
               </p>
-              <p className="text-sm mt-6 ">
+              <p className="xl:text-lg text-sm mt-6 ">
                 Create Crypto Loyalty Program for your Business
               </p>
               <p className='flex mt-4'>
@@ -68,10 +68,10 @@ export default function Home(props:any) {
                 <span><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></span>
               </p>
               <div>
-                  <button id={styles.joinButtonAnchore} className="w-12/12  p-3 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
+                  <button id={styles.joinButtonAnchore} className="w-12/12  pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
                       Join Waitlist
                   </button>
-                  <input type='text' placeholder='your email address...' className='text-sm w-60 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
+                  <input type='text' placeholder='your email address...' className='xl:text-md/[19px] text-sm w-60 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
               </div>
               <div>
                   <div></div>
@@ -84,21 +84,22 @@ export default function Home(props:any) {
             </div>
           </div>
 
-          <div className='grid grid-cols-5 gap-16 mt-36'>
-            <div className='w-12/12'></div>
-            <div className='w-12/12'>
-              <div className={`${styles.percentsNumbers} text-center text-6xl`}>21%</div>
+          <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-5 grid-cols-3 xl:gap-16 lg:gap-16 md:gap-16 sm:gap-16 gap-2 xl:mt-36 mt-20 p-5'>
+
+            <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
+            <div className='col-span-1 '>
+              <div className={`${styles.percentsNumbers} text-center text-5xl `}>21%</div>
               <div className={`${styles.percentsDescription} text-center text-1xl`}>of Americans own Cryptocurrency</div>
             </div>
-            <div className='w-12/12 '>
-              <div className={`${styles.percentsNumbers} text-center text-6xl`}>2K</div>
+            <div className='col-span-1'>
+              <div className={`${styles.percentsNumbers} text-center text-5xl xl:m-0 mt-16`}>2K</div>
               <div className={`${styles.percentsDescription} text-center text-1xl`}>Approximately 2,300 businesses accept Bitcoin in the U.S</div>
             </div>
-            <div className='w-12/12 '>
-            <div className={`${styles.percentsNumbers} text-center text-6xl`}>45M</div>
+            <div className='col-span-1'>
+            <div className={`${styles.percentsNumbers} text-center text-5xl xl:mt-0 mt-40`}>45M</div>
               <div className={`${styles.percentsDescription} text-center text-1xl`}>of Americans use crypto</div>
             </div>
-            <div className='w-12/12 '></div>
+            <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
 
           </div>
 
