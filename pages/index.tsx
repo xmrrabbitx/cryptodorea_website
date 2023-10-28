@@ -56,7 +56,7 @@ export default function Home(props:any) {
           <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-1'> 
             <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
               <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-28 mt-10`}>
-                Crypto Giveaways <br />
+                Crypto Cashback <br />
                 to Loyal Customers
               </p>
               <p className="xl:text-lg text-sm mt-6 ">
@@ -68,10 +68,10 @@ export default function Home(props:any) {
                 <span><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></span>
               </p>
               <div>
-                  <button id={styles.joinButtonAnchore} className="w-12/12  pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
+                  <button id={styles.joinButtonAnchore} className="w-30 p-4  pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
                       Join Waitlist
                   </button>
-                  <input type='text' placeholder='your email address...' className='xl:text-md/[19px] text-sm w-60 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
+                  <input type='text' placeholder='your email address...' className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-60 sm:w-60 w-56 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
               </div>
               <div>
                   <div></div>
@@ -87,53 +87,51 @@ export default function Home(props:any) {
           <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-5 grid-cols-3 xl:gap-16 lg:gap-16 md:gap-16 sm:gap-16 gap-2 xl:mt-36 mt-20 p-5'>
 
             <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
-            <div className='col-span-1 '>
-              <div className={`${styles.percentsNumbers} text-center text-5xl `}>21%</div>
-              <div className={`${styles.percentsDescription} text-center text-1xl`}>of Americans own Cryptocurrency</div>
+            <div className='col-span-1'>
+              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center text-left text-6xl `}>21%</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-left text-1x1`}>US adults hold Cryptocurrency</div>
             </div>
             <div className='col-span-1'>
-              <div className={`${styles.percentsNumbers} text-center text-5xl xl:m-0 mt-16`}>2K</div>
-              <div className={`${styles.percentsDescription} text-center text-1xl`}>Approximately 2,300 businesses accept Bitcoin in the U.S</div>
+              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center text-left text-6xl xl:m-0 mt-28`}>2K</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center  text-left text-1xl`}>Around 2,300 businesses accept Bitcoin in the U.S</div>
             </div>
             <div className='col-span-1'>
-            <div className={`${styles.percentsNumbers} text-center text-5xl xl:mt-0 mt-40`}>45M</div>
-              <div className={`${styles.percentsDescription} text-center text-1xl`}>of Americans use crypto</div>
+            <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center text-left text-6xl xl:mt-0 mt-60`}>45M</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-left text-1xl`}>of Americans use crypto</div>
             </div>
             <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
 
           </div>
 
-          <div className='grid grid-cols-5 gap-16 mt-16'>
-            <div className='w-12/12'></div>
-            <div className='w-12/12'></div>
-            <div className={`${styles.and} w-12/12 text-center text-6xl`}>and</div>
-            <div className='w-12/12'></div>
-            <div className='w-12/12'></div>
+          <div className='grid grid-cols-1 gap-16 xl:mt-16 lg:mt-16 md:mt-16 sm:mt-16 mt-10'>
+
+            <div className={`${styles.and} col-span-1 text-center text-7xl`}>and</div>
+
           </div>
 
           <div className='grid grid-cols-4 gap-1 mt-16'> 
-            <div className='w-12/12'></div>
-            <div className='w-12/12 text-right text-9xl pr-10'> 
+            <div className='col-span-1'></div>
+            <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-4 xl:text-right lg:text-right md:text-right sm:text-right text-center text-9xl xl:pr-10 lg:pr-10 md:pr-10 sm:pr-10 pr-0'> 
               <span className={styles.percentsNumbers}>90%</span>
             </div>
-            <div className='w-12/12 text-left text-xl pt-8 font-bold'>
+            <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-4 text-left text-xl pt-8 p-5 font-bold'>
                 <span className={styles.percentsDescription}>of American companies have some sort of Loyalty program. (<a className='text-orange-400 hover:text-orange-300' href="https://www.accenture.com/">Accensture</a>)</span>
             </div>
-            <div className='w-12/12'></div>
+            <div className='col-span-1'></div>
           </div>
 
           <div className='flex items-center justify-center mt-8'>
-              <hr className='h-0.5 w-8/12 ml-24 bg-gray-200 border-0 bg-black mt-24' />
+              <hr className='h-0.5 xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-8/12 w-8/12  ml-0 bg-gray-200 border-0 bg-black xl:mt-24 lg:mt-24 md:mt-24 sm:mt-24 mt-10 ' />
           </div>
 
           <div className='grid grid-cols-2 gap-1 mt-28'> 
-            <div className='w-12/12 pl-28 mt-24'>
+            <div className='col-span-1 pl-28 mt-24'>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>What is Crypto Dorea?</p>
               <div id={styles.doreaDefinition} className='mt-5 ml-14 pr-3 pl-7 pt-7 pb-7 rounded-md'>
                 <p id={styles.doreaDefinitionText} className='text-lg font-bold'>Crypto Dorea is the new way of Loyalty Program brougth to your business using auto pay system powered by smart contract.</p>
               </div>
             </div>
-            <div className='w-12/12 grid grid-cols-2'>
+            <div className='col-sppan-1 grid grid-cols-2'>
               <div className="image-slider pl-20"> 
                 
                   {images.map((image, index) => (
@@ -149,7 +147,7 @@ export default function Home(props:any) {
                   ))}
                  
                 </div>
-                <Image src={s} alt='aa' />
+                <Image src={s} alt='claiming cashback' />
               </div>
           </div>
 
