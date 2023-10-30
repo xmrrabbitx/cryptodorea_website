@@ -27,7 +27,8 @@ export default function Dashboard(props:any){
 
                         <Link href={"/dashboard/creategiveaway"} >create Giveaway</Link>
                         <Link href={"/dashboard/managegiveaways"} >manage Giveaways</Link>
-
+                        <Link href={"/dashboard/newpost"} >make new post</Link>
+                            
                 </div>
             </div>
 

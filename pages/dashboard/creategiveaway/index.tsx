@@ -40,7 +40,7 @@ export default function CreateGiveaway(cookies:any){
                 setRes(resp.success);
             }
 
-        }
+    }
 
     return (
 
