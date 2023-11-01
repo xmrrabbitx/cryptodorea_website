@@ -5,8 +5,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css';
 
 
+const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 
 interface Data {
     [key: string]: string;
@@ -14,7 +17,43 @@ interface Data {
 
 export default function newPost(props:any){
 
-  
+  const [content, setContent] = useState('');
+
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link', 'image'],
+      [{ align: [] }],
+      [{ color: [] }],
+      ['code-block'],
+      ['clean'],
+    ],
+  };
+
+
+  const quillFormats = [
+    'header',
+    'bold',
+    'italic',
+    'underline',
+    'strike',
+    'blockquote',
+    'list',
+    'bullet',
+    'link',
+    'image',
+    'align',
+    'color',
+    'code-block',
+  ];
+
+
+  const handleEditorChange = (newContent:any) => {
+    setContent(newContent);
+  };
+
   const [articleTitle, setArticleTitle] = useState("");
 
   const [res, setRes] = useState("");
@@ -28,7 +67,7 @@ export default function newPost(props:any){
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({articleTitle}),
+        body: JSON.stringify({articleTitle,content}),
 
     });
 
@@ -45,8 +84,7 @@ export default function newPost(props:any){
 
     return(
         <>
-
-        <form onSubmit={handleSubmit}> 
+         <form onSubmit={handleSubmit}> 
           <label>
               title
           </label>
@@ -54,15 +92,21 @@ export default function newPost(props:any){
            type="text"
            onChange={(event)=>setArticleTitle(event.target.value)}
           />
-          <label>
-              text
-          </label>
-          <textarea
-           onChange={(event)=>setArticleTitle(event.target.value)}
-          />
           <button type='submit' className='bg-grey'>post</button>
         </form>
         
+        <div className="h-full w-full flex items-center flex-col">
+        <div className="h-full w-[40vw]">
+          <QuillEditor
+            value={content}
+            onChange={handleEditorChange}
+            modules={quillModules}
+            formats={quillFormats}
+            className="w-full h-[70%] mt-10 bg-white"
+          />
+        </div>
+      </div>
+     
         </>
     )
           
