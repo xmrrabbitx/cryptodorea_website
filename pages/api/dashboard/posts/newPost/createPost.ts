@@ -4,6 +4,7 @@ import fs from "fs"
 import {connect} from "../../../db"
 import path from 'path';
 
+
 export default async function createPost(
   req: NextApiRequest,
   res: NextApiResponse
@@ -15,7 +16,7 @@ export default async function createPost(
 
     const db = await connect();
 
-    if(articletName){
+    if(articletName && content){
 
         const hasSpecialChars = (str:string) => {
           const regex = /[`!#%^*_+\-\[\]{};':"\\|<>\/?~]/;
@@ -29,28 +30,45 @@ export default async function createPost(
             
         }else{
 
-            const BlogName:any = await db.query(
-                "select * from blog_posts where  article_name = ?",
-                [articletName]
-            );
-
-            console.log(BlogName[0])
+            const removeWhiteSpace = articletName.trim()
+            const filename = removeWhiteSpace.replace(/\s+/g, '-')
 
             const Blog:any = await db.query(
-                "insert into blog_posts  (article_name,created_at) VALUES (?,NOW())",
-                [articletName]
+                'insert into blog_posts (article_name,created_at) SELECT (?) AS article_name, NOW() WHERE NOT EXISTS (SELECT * FROM blog_posts where article_name = ?)',
+                [filename,filename]
             );
             
-            const formatFileName = articletName.split(' ');
-            const filename = formatFileName.join('-');
-
             let filePath = path.join(process.cwd() + "/pages/blog/" + filename + "/" + filename + ".tsx");
-    
+console.log(filePath)
             if (fs.existsSync(filePath)) {
-
+console.log("exists")
                 return res.status(403).json({error:"file existed!!"});
 
             }else{
+
+                console.log("not existed")
+            const blogTempelate = `export default function tempBlog(props:any){
+                                
+                return(
+    
+                            <>
+                                ${content}
+                            </>
+                )
+                    
+                }
+    
+                export async function getServerSideProps(context:any) {
+    
+                    // console.log(context.req.cookies['user'])
+                
+                    return {
+                    props:{}
+                    }
+                    
+                }
+                `;
+
                 let directoryPath =  path.join(process.cwd() + "/pages/blog/" + filename);
                 fs.mkdirSync(directoryPath);
                 fs.writeFile(filePath,content,function(err){
