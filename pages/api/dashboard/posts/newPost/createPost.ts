@@ -13,7 +13,6 @@ export default async function createPost(
     const articletName:string = req.body.articleTitle;
     const content:string = req.body.content;
 
-
     const db = await connect();
 
     if(articletName && content){
@@ -23,14 +22,16 @@ export default async function createPost(
          
           return regex.test(str);
         }
-    
-        if(hasSpecialChars(articletName)){
+
+    const articleTitle = articletName.replace(/[\`!#%^*_+\\-\\[\]{};':"\\|<>?\/~]/g, '');
+   
+    if(hasSpecialChars(articleTitle)){
 
             return res.status(404).json({error:"special characters are not allowed!"})
             
         }else{
 
-            const removeWhiteSpace = articletName.trim()
+            const removeWhiteSpace = articleTitle.trim()
             const filename = removeWhiteSpace.replace(/\s+/g, '-')
 
             const Blog:any = await db.query(
@@ -38,20 +39,21 @@ export default async function createPost(
                 [filename,filename]
             );
             
-            let filePath = path.join(process.cwd() + "/pages/blog/" + filename + "/" + filename + ".tsx");
-console.log(filePath)
+            let filePath = path.join(process.cwd() + "/pages/blog/" + filename + "/index.tsx");
+
             if (fs.existsSync(filePath)) {
-console.log("exists")
+                console.log("exists")
                 return res.status(403).json({error:"file existed!!"});
 
             }else{
 
                 console.log("not existed")
-            const blogTempelate = `export default function tempBlog(props:any){
+            const blogTempelate = `export default function postBlog(props:any){
                                 
                 return(
     
                             <>
+                                <title>${articletName}</title>
                                 ${content}
                             </>
                 )
@@ -71,7 +73,7 @@ console.log("exists")
 
                 let directoryPath =  path.join(process.cwd() + "/pages/blog/" + filename);
                 fs.mkdirSync(directoryPath);
-                fs.writeFile(filePath,content,function(err){
+                fs.writeFile(filePath,blogTempelate,function(err){
 
                     return res.status(400).json({error:"create file doesnt successful!"});
                 });

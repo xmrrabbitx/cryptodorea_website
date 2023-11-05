@@ -75,7 +75,7 @@ export default function newPost(props:any){
     
     if(resp.error){
         setError(resp.error);
-        console.log(resp.success)
+        console.log(resp.error)
     }else{
         setRes(resp.success);
         console.log(resp.success)
