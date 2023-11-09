@@ -5,8 +5,10 @@ import styles from '@/styles/landing/Home.module.css'
 import titleMainPic from "@/public/pics/titleCryptoPic.svg"
 import BitcoinPic from "@/public/pics/Bitcoin.svg"
 import EthPic from "@/public/pics/Eth.svg"
-import s from "@/public/pics/s.svg"
-import productsample1 from "@/public/pics/productSample_1.svg"
+import CashbackPic from "@/public/pics/cashback.svg"
+import CreditCradPic from "@/public/pics/creditbalance.svg"
+import OrderPaidPic from "@/public/pics/orderpaid.svg"
+import CustomerPic from "@/public/pics/customer.svg"
 import Cookies from 'js-cookie';
 import { useState, useEffect, useRef  } from 'react';
 
@@ -22,22 +24,26 @@ const images = [
 export default function Home(props:any) {
 
 
-  const [currentImage, setCurrentImage] = useState(0);
+  const [showContent, setShowContent] = useState(false)
 
-
-  useEffect(():any => {
-    const interval = setInterval(() => {
-      if(currentImage >= 3){
-        
-        setCurrentImage(-1);
+  useEffect(() => {
+    function handleScroll() {
+      const trigger:any = document.getElementById('CustomerPic')
+      if (trigger.getBoundingClientRect().top < window.innerHeight) {
+        setShowContent(true)  
+      }else{
+        setShowContent(false)  
       }
-        setCurrentImage((prevImage) => (prevImage + 1));
+    }
 
-    }, 3000);
+    window.addEventListener('scroll', handleScroll)
 
-    return () => clearInterval(interval);
-  });
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
+  const customerStyle = showContent ? 'bottom-0' : "hidden bottom-0";
 
   return (
     <>
@@ -131,24 +137,37 @@ export default function Home(props:any) {
                 <p id={styles.doreaDefinitionText} className='text-lg font-bold'>Crypto Dorea is the new way of Loyalty Program brougth to your business using auto pay system powered by smart contract.</p>
               </div>
             </div>
-            <div className='col-sppan-1 grid grid-cols-2'>
-              <div className="image-slider pl-20"> 
-                
-                  {images.map((image, index) => (
-                    <Image
-                      key={index}
-                      src={`/pics/${image}`}
-                      alt={`Image ${index + 1}`}
-                      className={`${index === currentImage ? styles.slideVisible : styles.slideHidden} ${styles.slideshow} `}
-                      width={100}
-                      height={100}
-                      quality={100}
-                    />
-                  ))}
-                 
-                </div>
-                <Image src={s} alt='claiming cashback' />
-              </div>
+            <div className='grid items-center justify-center relative'>
+
+                <Image 
+                id='CustomerPic'
+                src={CustomerPic}
+                className='rounded-full relative'
+                width={550}
+                height={550}
+                alt='Crypto Dorea Customer'
+                />
+
+                <Image 
+                src={OrderPaidPic}
+                className={`${customerStyle} absolute right-28 opacity-0 animate-[order_2s_ease-out_forwards]`}
+                width={220}
+                alt='Crypto Dorea order paid'
+                />
+                <Image 
+                src={CashbackPic}
+                className={`${customerStyle} absolute right-28 opacity-0 animate-[cashback_2s_ease-out_forwards_1s]`}
+                width={220}
+                alt='Crypto Dorea cashback'
+                />
+                <Image 
+                src={CreditCradPic}
+                className={`${customerStyle} absolute  right-28 opacity-0 animate-[credit_2s_ease-out_forwards_3s]`}
+                width={220}
+                alt='Crypto Dorea credit card balance'
+                />
+
+            </div>
           </div>
 
           <div className='grid grid-cols-1 gap-1 mt-32'>
