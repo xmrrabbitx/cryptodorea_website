@@ -13,14 +13,6 @@ import Cookies from 'js-cookie';
 import { useState, useEffect, useRef  } from 'react';
 
 
-
-const images = [
-  'productSample_1.svg',
-  'productSample_2.svg',
-  'productSample_3.svg',
-  'productSample_4.svg',
-];
-
 export default function Home(props:any) {
 
 
@@ -29,7 +21,7 @@ export default function Home(props:any) {
   useEffect(() => {
     function handleScroll() {
       const trigger:any = document.getElementById('CustomerPic')
-      if (trigger.getBoundingClientRect().top < window.innerHeight) {
+      if (trigger.getBoundingClientRect().top < (window.innerHeight/1.5)) {
         setShowContent(true)  
       }else{
         setShowContent(false)  
@@ -90,20 +82,20 @@ export default function Home(props:any) {
             </div>
           </div>
 
-          <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-5 grid-cols-3 xl:gap-16 lg:gap-16 md:gap-16 sm:gap-16 gap-2 xl:mt-36 mt-20 p-5'>
+          <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-5 grid-cols-3 xl:gap-16 lg:gap-16 md:gap-16 sm:gap-16 gap-6 xl:mt-36 mt-16 p-5 word-break'>
 
             <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
-            <div className='col-span-1'>
-              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center text-left text-6xl `}>21%</div>
-              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-left text-1x1`}>US adults hold Cryptocurrency</div>
+            <div className='xl:col-span-1 col-span-1'>
+              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl text-center`}>21%</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center xl:text-base lg:text-base md:text-base sm:text-base text-[12px]`}>US adults hold Cryptocurrency</div>
             </div>
-            <div className='col-span-1'>
-              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center text-left text-6xl xl:m-0 mt-28`}>2K</div>
-              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center  text-left text-1xl`}>Around 2,300 businesses accept Bitcoin in the U.S</div>
+            <div className='xl:col-span-1 col-span-1'>
+              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl xl:m-0 text-center`}>2K</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center  text-center xl:text-base lg:text-base md:text-base sm:text-base  text-[12px]`}>Around 2,300 businesses accept Bitcoin in the U.S</div>
             </div>
-            <div className='col-span-1'>
-            <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center text-left text-6xl xl:mt-0 mt-60`}>45M</div>
-              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-left text-1xl`}>of Americans use crypto</div>
+            <div className='xl:col-span-1 col-span-1'>
+            <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl  xl:mt-0 text-center`}>45M</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center xl:text-base lg:text-base md:text-base sm:text-base  text-[12px]`}>of Americans use crypto</div>
             </div>
             <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
 
@@ -130,14 +122,14 @@ export default function Home(props:any) {
               <hr className='h-0.5 xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-8/12 w-8/12  ml-0 bg-gray-200 border-0 bg-black xl:mt-24 lg:mt-24 md:mt-24 sm:mt-24 mt-10 ' />
           </div>
 
-          <div className='grid grid-cols-2 gap-1 mt-28'> 
-            <div className='col-span-1 pl-28 mt-24'>
+          <div className='grid grid-cols-2 gap-1 xl:mt-28 mt-16'> 
+            <div className='xl:col-span-1 col-span-2 xl:pl-28 pl-5 xl:mt-24 mt-5'>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>What is Crypto Dorea?</p>
-              <div id={styles.doreaDefinition} className='mt-5 ml-14 pr-3 pl-7 pt-7 pb-7 rounded-md'>
+              <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
                 <p id={styles.doreaDefinitionText} className='text-lg font-bold'>Crypto Dorea is the new way of Loyalty Program brougth to your business using auto pay system powered by smart contract.</p>
               </div>
             </div>
-            <div className='grid items-center justify-center relative'>
+            <div className='xl:col-span-1 col-span-2 xl:p-0 lg:p-0  md:p-0 sm:p-0 p-5 grid items-center justify-center relative'>
 
                 <Image 
                 id='CustomerPic'
@@ -162,7 +154,7 @@ export default function Home(props:any) {
                 />
                 <Image 
                 src={CreditCradPic}
-                className={`${customerStyle} absolute  right-28 opacity-0 animate-[credit_2s_ease-out_forwards_3s]`}
+                className={`${customerStyle} absolute  right-28 opacity-0 animate-[credit_2s_ease-out_forwards_2s]`}
                 width={220}
                 alt='Crypto Dorea credit card balance'
                 />
