@@ -15,13 +15,25 @@ module.exports = {
           'from': { "margin-bottom":"0px",'opacity':"0"},
           'to': {  "margin-bottom":"33%",'opacity':"1"},
         },
+        orderSmall: {
+          'from': { "margin-bottom":"0px",'opacity':"0"},
+          'to': {  "margin-bottom":"53%",'opacity':"1"},
+        },
         cashback: {
           'from': { "margin-bottom":"0px",'opacity':"0"},
           'to': {  "margin-bottom":"21%",'opacity':"1"},
         },
+        cashbackSmall: {
+          'from': { "margin-bottom":"0px",'opacity':"0"},
+          'to': {  "margin-bottom":"36%",'opacity':"1"},
+        },
         credit: {
           'from': { "margin-bottom":"0px",'opacity':"0"},
           'to': {  "margin-bottom":"7%",'opacity':"1"},
+        },
+        creditSmall: {
+          'from': { "margin-bottom":"0px",'opacity':"0"},
+          'to': {  "margin-bottom":"16%",'opacity':"1"},
         }
       }
     },
