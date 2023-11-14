@@ -5,16 +5,16 @@ import TwitterLogo from "@/public/pics/twitter.svg"
 
 export default function Footer(){
     return(
-        <footer className={`${styles.footer} grid grid-cols-1 mt-36 pl-24 pt-16`}>
-          <div className="flex flex-grid">
+        <footer className={`${styles.footer} grid grid-cols-1 xl:mt-36 lg:mt-36 md:mt-36 sm:mt-16 mt-16`}>
+          <div className="flex flex-grid xl:p-16 lg:p-16 md:p-16 sm:p-5 p-5">
             <div className='w-12/12'>
-              <p className='text-xl'>About Us</p>
-              <a href='#ourgoal' className='grid grid-cols-1 text-1xl font-bold pt-2'>
+              <p className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-lg'>About Us</p>
+              <a href='#ourgoal' className='grid grid-cols-1 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold pt-2'>
                   Our Goal
               </a>
             </div>
             <div className='w-12/12 pl-16'>
-              <p  className='text-xl'>Community</p>
+              <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-lg'>Community</p>
               <div className='flex flex-grid items-center justify-center gap-2 pt-2'>
               
                 <a href="https://linkedin.com/cryptodorea" >
@@ -29,8 +29,8 @@ export default function Footer(){
            
           </div>
 
-          <p className='text-center font-bold text-gray-800 mt-40 mb-5'> 
-              @cryptodorea
+          <p className='text-center font-bold text-gray-800 mt-40 xl:mb-5 mb-10'> 
+            Copyright © 2023 by Crypto Dorea Co. All Rights Reserved. 
           </p>
 
         </footer>
