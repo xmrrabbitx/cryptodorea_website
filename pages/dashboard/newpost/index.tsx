@@ -5,11 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
+import { useQuill } from "react-quilljs";
 
-
-const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 
 interface Data {
     [key: string]: string;
@@ -17,42 +15,54 @@ interface Data {
 
 export default function newPost(props:any){
 
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState({});
+  
+  
+  const theme = 'snow';
+  //const theme = 'bubble';
 
-  const quillModules = {
+  const modules = {
     toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      ['link', 'image'],
-      [{ align: [] }],
-      [{ color: [] }],
-      ['code-block'],
-      ['clean'],
+
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+
+        [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+        [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+        [{ 'direction': 'rtl' }],                         // text direction
+      
+        [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      
+        [{ 'color': [] }, { 'background': ["red"] }],          // dropdown with defaults from theme
+        [{ 'font': [] }],
+        [{ 'align': [] }],
+      
+        ['clean'] 
     ],
+    
   };
 
+  const placeholder = 'Compose an epic...';
 
-  const quillFormats = [
-    'header',
-    'bold',
-    'italic',
-    'underline',
-    'strike',
-    'blockquote',
-    'list',
-    'bullet',
-    'link',
-    'image',
-    'align',
-    'color',
-    'code-block',
-  ];
+  const formats = ['bold', 'italic', 'underline', 'strike','code-block','blockquote'];
 
+  //const { quill, quillRef } = useQuill({ theme, modules, formats, placeholder });
+  const { quill, quillRef } = useQuill({theme, modules, formats, placeholder});
 
-  const handleEditorChange = (newContent:any) => {
-    setContent(newContent);
-  };
+  useEffect(() => {
+
+    if (quill) {
+      quill.on('text-change', (delta, oldDelta, source) => {
+
+        setContent(quill.root.innerHTML); // Get delta contents
+       
+      });
+    }
+
+  }, [quill])
 
   const [articleTitle, setArticleTitle] = useState("");
 
@@ -98,13 +108,8 @@ export default function newPost(props:any){
         
         <div className="h-full w-full flex items-center flex-col">
         <div className="h-full w-[40vw]">
-          <QuillEditor
-            value={content}
-            onChange={handleEditorChange}
-            modules={quillModules}
-            formats={quillFormats}
-            className="w-full h-[70%] mt-10 bg-white"
-          />
+          <div
+           ref={quillRef} />
         </div>
       </div>
      

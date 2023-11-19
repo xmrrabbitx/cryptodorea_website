@@ -29,7 +29,7 @@ export default function Footer(){
            
           </div>
 
-          <p className='text-center font-bold text-gray-800 mt-40 xl:mb-5 mb-10'> 
+          <p className='text-center font-bold text-gray-800 mt-40 xl:mb-5 mb-16 xl:text-base text-xs'> 
             Copyright © 2023 by Crypto Dorea Co. All Rights Reserved. 
           </p>
 

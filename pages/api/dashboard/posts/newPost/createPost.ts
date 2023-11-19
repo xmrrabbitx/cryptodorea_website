@@ -42,34 +42,44 @@ export default async function createPost(
             let filePath = path.join(process.cwd() + "/pages/blog/" + filename + "/index.tsx");
 
             if (fs.existsSync(filePath)) {
-                console.log("exists")
+           
                 return res.status(403).json({error:"file existed!!"});
 
             }else{
 
-                console.log("not existed")
-            const blogTempelate = `export default function postBlog(props:any){
+            const blogTempelate = `
+            
+import Head from 'next/head'
+import 'react-quill/dist/quill.snow.css';
+
+export default function postBlog(props:any){
                                 
-                return(
+    return(
     
-                            <>
-                                <title>${articletName}</title>
-                                ${content}
-                            </>
-                )
+        <>
+            <Head>
+                <title>${articletName}</title>
+                <meta name="description" content="crypto dorea description must be here" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/doreaLogo.ico" />
+            </Head>
+            <div dangerouslySetInnerHTML={{__html: \`${content}\` }} />
+            
+        </>
+    )
                     
-                }
+}
     
-                export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context:any) {
     
-                    // console.log(context.req.cookies['user'])
+// console.log(context.req.cookies['user'])
                 
-                    return {
-                    props:{}
-                    }
+    return {
+        props:{}
+    }
                     
-                }
-                `;
+}
+`;
 
                 let directoryPath =  path.join(process.cwd() + "/pages/blog/" + filename);
                 fs.mkdirSync(directoryPath);
