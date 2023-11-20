@@ -63,7 +63,15 @@ export default function postBlog(props:any){
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/doreaLogo.ico" />
             </Head>
-            <div dangerouslySetInnerHTML={{__html: \`${content}\` }} />
+            <div dangerouslySetInnerHTML={{__html: \`
+            
+            <div class="ql-snow">
+                <div class="ql-editor">
+                    ${content}
+                </div>
+            </div>
+            
+            \` }} />
             
         </>
     )

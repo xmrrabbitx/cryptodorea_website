@@ -47,10 +47,10 @@ export default function newPost(props:any){
 
   const placeholder = 'Compose an epic...';
 
-  const formats = ['bold', 'italic', 'underline', 'strike','code-block','blockquote'];
+  const formats = ['bold', 'italic', 'underline', 'strike','code-block','blockquote','header','direction','size','color','align','font'];
 
   //const { quill, quillRef } = useQuill({ theme, modules, formats, placeholder });
-  const { quill, quillRef } = useQuill({theme, modules, formats, placeholder});
+  const { quill, quillRef } = useQuill({theme, formats, modules,  placeholder});
 
   useEffect(() => {
 
@@ -85,10 +85,8 @@ export default function newPost(props:any){
     
     if(resp.error){
         setError(resp.error);
-        console.log(resp.error)
     }else{
         setRes(resp.success);
-        console.log(resp.success)
     }
 
 }

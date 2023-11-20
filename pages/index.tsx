@@ -37,6 +37,39 @@ export default function Home(props:any) {
 
   const customerStyle = showContent ? 'bottom-0' : "hidden bottom-0";
 
+
+  // email address
+  const [emailAddress, setEmailAddress] = useState("");
+
+  // error and response of email
+  const [res, setRes] = useState("");
+  const [Error, setError] = useState("");
+
+  // handle email submission
+  const EmailSubmit = async (event:any) => {
+
+    event.preventDefault();
+
+    const response = await fetch("http://localhost:3000/api/email/getEmailsPre",{
+
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({emailAddress}),
+
+    });
+
+    const resp = await response.json();
+    
+    if(resp.error){
+        setError(resp.error);
+        console.log(resp.error)
+    }else{
+        setRes(resp.success);
+        console.log(resp.success)
+    }
+
+  }
+
   return (
     <>
 
@@ -66,10 +99,16 @@ export default function Home(props:any) {
                 <span><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></span>
               </p>
               <div>
+                <form onSubmit={EmailSubmit}> 
                   <button id={styles.joinButtonAnchore} className="w-30 p-4  pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
                       Join Waitlist
                   </button>
-                  <input type='text' placeholder='your email address...' className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-60 sm:w-60 w-56 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
+                  <input 
+                  onChange={(event)=>setEmailAddress(event.target.value)}
+                  type='text' 
+                  placeholder='your email address...' 
+                  className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-60 sm:w-60 w-56 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
+                </form>
               </div>
               <div>
                   <div></div>
