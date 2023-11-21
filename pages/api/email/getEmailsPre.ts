@@ -1,6 +1,10 @@
 // save user email addresses info into mysql DB
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {connect} from "../db"
+var nodemailer = require("nodemailer");
+import welcomeEmail from "../../components/email/welcomeEmail/welcomeEmail"
+
+require('dotenv').config()
 
 export default async function getEmailsPre(
   req: NextApiRequest,
@@ -30,16 +34,43 @@ export default async function getEmailsPre(
           [emailAddress]
       );
         if(Checkemailspre[0].length > 0){
-          console.log("okkk")
-        }else{
+           
+            return res.status(404).json({error:"we already got you..."})
+        
+          }else{
       
-
             const emailspre:any = await db.query(
               'insert into emailspre (email_address,created_at) VALUES(?,NOW())',
               [emailAddress]
           );
 
           if (emailspre[0].affectedRows > 0) {
+
+            var transporter = nodemailer.createTransport({
+              port: 465,
+              host: "smtp.gmail.com",
+              service: "gmail",
+              auth: {
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASSWORD,
+              },
+            });
+          
+            var mailOptions = {
+              from: 'hadi.mirzaie300@gmail.com',
+              to: "hadi.mirzaie400@yahoo.com",
+              subject: "test email",
+              html: welcomeEmail
+            };
+          
+            transporter.sendMail(mailOptions, function (error:any, info:any) {
+              if (error) {
+                throw new Error(error);
+              } else {
+                console.log("Email Sent");
+                return true;
+              }
+            });
 
             return res.status(200).json({success:"thank you, we will contact with you!"})
               
