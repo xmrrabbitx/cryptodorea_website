@@ -222,7 +222,7 @@ export default function Home(props:any) {
                   </svg>
 
                   </div>
-                  <p className='pb-4'>Simple Auto Pay Mechanism</p>
+                  <p className='pb-4'>Simple Auto Pay <br /> Mechanism</p>
                   </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
                   <div className=' flex items-center justify-center pb-3'>
@@ -249,10 +249,10 @@ export default function Home(props:any) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                   </svg>
                   </div>
-                  <p className='pb-4'> Create Crypto Cashback Program</p>
+                  <p className='pb-4'> Create Crypto <br /> Cashback Program</p>
                   </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
-                  <div className=' flex items-center justify-center pb-3'>
+                  <div className='flex items-center justify-center pb-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
                   </svg>
@@ -274,7 +274,10 @@ export default function Home(props:any) {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 gap-1 xl:mt-28 lg:mt-28 md:mt-28 sm:mt-28 mt-24 p-5'>
+          <div className='grid grid-cols-1 gap-1 xl:mt-28 lg:mt-28 md:mt-28 sm:mt-28 mt-10 p-5'>
+            <div className='w-12/12 flex items-center justify-center'>
+                <p className='text-slate-700 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-lg font-bold p-8 text-center'>get update on <span className='text-[#faa143]'>Crypto Dorea</span> product</p>
+            </div>
             <div className='w-12/12 flex items-center justify-center'>
                   <input type='text' placeholder='your email address...' className='text-md w-96 pl-4 p-3 border-2 border-solid border-gray-300 rounded-md'  />
             </div>

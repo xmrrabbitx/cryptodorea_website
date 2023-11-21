@@ -1,15 +1,20 @@
 // save user email addresses info into mysql DB
 import type { NextApiRequest, NextApiResponse } from 'next'
+import * as React from 'react'; 
+import { renderToString } from 'react-dom/server'
 import {connect} from "../db"
 var nodemailer = require("nodemailer");
-import welcomeEmail from "../../components/email/welcomeEmail/welcomeEmail"
+import {welcomeEmail} from "../../components/email/welcomeEmail/welcomeEmail"
 
 require('dotenv').config()
+
+const welcomeEmailTempelate:any = renderToString(welcomeEmail());
 
 export default async function getEmailsPre(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+   
 
     const emailAddress:string = req.body.emailAddress;
 
@@ -60,7 +65,7 @@ export default async function getEmailsPre(
               from: 'hadi.mirzaie300@gmail.com',
               to: "hadi.mirzaie400@yahoo.com",
               subject: "test email",
-              html: welcomeEmail
+              html: welcomeEmailTempelate
             };
           
             transporter.sendMail(mailOptions, function (error:any, info:any) {

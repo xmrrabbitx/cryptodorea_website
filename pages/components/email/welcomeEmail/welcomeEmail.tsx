@@ -1,12 +1,15 @@
 
 // welcome tempelate pre email page
 
-const welcomeEmail = () => (
+export function welcomeEmail(){
+
+  return (
     <div>
       <h2>Hello</h2>
 
     </div>
-);
-  
-export default welcomeEmail;
+
+    )
+}
+
   
