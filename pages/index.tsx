@@ -98,14 +98,14 @@ export default function Home(props:any) {
               </p>
               <div>
                 <form onSubmit={EmailSubmit}> 
-                  <button id={styles.joinButtonAnchore} className="w-30 p-4  pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
+                  <button id={styles.joinButtonAnchore} className="w-30 p-4 xl:ml-3 lg:mr-3 md:mr-3 sm:mr-3 mr-3 pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
                       Join Waitlist
                   </button>
                   <input 
                   onChange={(event)=>setEmailAddress(event.target.value)}
                   type='text' 
                   placeholder='your email address...' 
-                  className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-40 sm:w-40 w-56 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
+                  className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-40 sm:w-40 w-46 mt-5 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
                 </form>
               </div>
               <div>
@@ -199,7 +199,7 @@ export default function Home(props:any) {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 gap-1 mt-32'>
+          <div className='grid grid-cols-1 gap-1 mt-32 xl:pr-0 md:pr-5 pr-0'>
             <div className='col-span-1 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Why Crypto Dorea?</p>
                 <div className='grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-5 mt-6 '>
@@ -236,7 +236,7 @@ export default function Home(props:any) {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 gap-1 xl:mt-40 lg:mt-40 md:mt-40 sm:mt-40 mt-16'>
+          <div className='grid grid-cols-1 gap-1 xl:mt-40 lg:mt-40 md:mt-40 sm:mt-40 mt-16 xl:pr-0 md:pr-5 pr-0'>
             <div className='w-12/12 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
             <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>How it works?</p>
             <div className='grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-5'>
@@ -290,11 +290,11 @@ export default function Home(props:any) {
               <hr className='h-0.5 xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-8/12 w-8/12  ml-0 bg-gray-200 border-0 bg-black xl:mt-24 lg:mt-24 md:mt-24 sm:mt-24 mt-10 ' />
           </div>
 
-          <div className='grid grid-cols-1 gap-1 mt-20 xl:pl-28 lg:pl-28 md:pl-28 sm:pl-28 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>                                    
-            <div className='xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-8/12 w-12/12 '>
+          <div className='grid grid-cols-1 gap-1 mt-20 xl:pl-28 lg:pl-28 md:pl-8 sm:pl-8 xl:p-0 lg:p-5 md:p-5 p-5 '>                                    
+            <div className='xl:w-8/12 lg:w-8/12 md:w-12/12 sm:w-12/12 w-12/12 '>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
-                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-10 leading-10'>
+                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-10 lg:leading-10 md:leading-10 leading-10'>
                   We are a team of experts who believe everyone deserves more. So we gather together as the Dorea team to provide the best suit for your business. now our focus is small- to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in crypto dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>
