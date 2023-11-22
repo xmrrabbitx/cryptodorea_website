@@ -80,13 +80,11 @@ export default function Home(props:any) {
         <link rel="icon" href="/doreaLogo.ico" />
       </Head>
 
-      <main className='mt-5'>
-
-        <div className='container max-w-full'>
+        <div className='container max-w-full mt-5'>
 
           <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-1'> 
             <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
-              <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-28 mt-10`}>
+              <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-18 mt-10`}>
                 Crypto Cashback <br />
                 to Loyal Customers
               </p>
@@ -107,7 +105,7 @@ export default function Home(props:any) {
                   onChange={(event)=>setEmailAddress(event.target.value)}
                   type='text' 
                   placeholder='your email address...' 
-                  className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-60 sm:w-60 w-56 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
+                  className='xl:text-md/[19px] text-sm xl:w-60 lg:w-60 md:w-40 sm:w-40 w-56 ml-3 pl-4 p-2 border-2 border-solid border-gray-300 rounded-lg'  />
                 </form>
               </div>
               <div>
@@ -121,22 +119,22 @@ export default function Home(props:any) {
             </div>
           </div>
 
-          <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-5 grid-cols-3 xl:gap-16 lg:gap-16 md:gap-16 sm:gap-16 gap-6 xl:mt-36 mt-16 p-5 word-break'>
+          <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 xl:gap-16 lg:gap-16 md:gap-16 sm:gap-16 gap-6 xl:mt-36 mt-16 p-5 word-break'>
 
-            <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
+            <div className='xl:col-span-1 xl:inline lg:inline md:hidden sm:hidden hidden '></div>
             <div className='xl:col-span-1 col-span-1'>
               <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl text-center`}>21%</div>
               <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center xl:text-base lg:text-base md:text-base sm:text-base text-[12px]`}>US adults hold Cryptocurrency</div>
             </div>
             <div className='xl:col-span-1 col-span-1'>
-              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl xl:m-0 text-center`}>2K</div>
+              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl xl:m-0 text-center`}>2.3K</div>
               <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center  text-center xl:text-base lg:text-base md:text-base sm:text-base  text-[12px]`}>Around 2,300 businesses accept Bitcoin in the U.S</div>
             </div>
             <div className='xl:col-span-1 col-span-1'>
             <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl  xl:mt-0 text-center`}>45M</div>
               <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center xl:text-base lg:text-base md:text-base sm:text-base  text-[12px]`}>of Americans use crypto</div>
             </div>
-            <div className='xl:col-span-1 xl:inline lg:inline md:inline sm:inline hidden '></div>
+            <div className='xl:col-span-1 xl:inline lg:inline md:hidden sm:hidden hidden '></div>
 
           </div>
 
@@ -147,14 +145,14 @@ export default function Home(props:any) {
           </div>
 
           <div className='grid grid-cols-4 gap-1 mt-16'> 
-            <div className='col-span-1'></div>
-            <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-4 xl:text-right lg:text-right md:text-right sm:text-right text-center text-9xl xl:pr-10 lg:pr-10 md:pr-10 sm:pr-10 pr-0'> 
-              <span className={styles.percentsNumbers}>90%</span>
+            <div className='xl:col-span-1 xl:inline lg:inline md:hidden sm:hidden hidden '></div>
+            <div className='xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-4 xl:text-right lg:text-right md:text-right sm:text-right text-center text-9xl xl:pr-10 lg:pr-10 md:pr-10 sm:pr-10 pr-0'> 
+              <span className={styles.percentsNumbers}>98%</span>
             </div>
-            <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-4 text-left text-xl pt-8 p-5 font-bold'>
-                <span className={styles.percentsDescription}>of American companies have some sort of Loyalty program. (<a className='text-orange-400 hover:text-orange-300' href="https://www.accenture.com/">Accensture</a>)</span>
+            <div className='xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-4 text-left text-xl pt-8 p-5 font-bold'>
+                <span className={styles.percentsDescription}>of American Businesses have some sort of Loyalty program. (<a className='text-orange-400 hover:text-orange-300' href="https://www.accenture.com/">Accensture</a>)</span>
             </div>
-            <div className='col-span-1'></div>
+            <div className='xl:col-span-1 xl:inline lg:inline md:hidden sm:hidden hidden '></div>
           </div>
 
           <div className='flex items-center justify-center mt-8'>
@@ -202,10 +200,10 @@ export default function Home(props:any) {
           </div>
 
           <div className='grid grid-cols-1 gap-1 mt-32'>
-            <div className='col-span-1 xl:pl-28 lg:pl-28 md:pl-28 sm:pl-28 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
+            <div className='col-span-1 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Why Crypto Dorea?</p>
-                <div className='grid grid-cols-5 gap-5 mt-6 '>
-                  <div className={`'col-span-1'`}></div>
+                <div className='grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-5 mt-6 '>
+                  <div className={`'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5  xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
                     <div className=' flex items-center justify-center pb-3'>
                       <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 ">
@@ -233,16 +231,16 @@ export default function Home(props:any) {
                   <p className='pb-4'>Low Cost <br/> Blockchain Fees</p>
                     
                   </div>
-                  <div className={`'col-span-1'`}></div>
+                  <div className={`'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
                 </div>
             </div>
           </div>
 
           <div className='grid grid-cols-1 gap-1 xl:mt-40 lg:mt-40 md:mt-40 sm:mt-40 mt-16'>
-            <div className='w-12/12  xl:pl-28 lg:pl-28 md:pl-28 sm:pl-28 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
+            <div className='w-12/12 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
             <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>How it works?</p>
-            <div className='grid grid-cols-5 gap-5'>
-                  <div className={` 'col-span-1'`}></div>
+            <div className='grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-5'>
+                  <div className={` 'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
                   <div className=' flex items-center justify-center pb-3'>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
@@ -269,7 +267,7 @@ export default function Home(props:any) {
                   <p className='pb-4'>Auto Pay <br/> to your Customers</p>
                     
                     </div>
-                  <div className={`'col-span-1'`}></div>
+                  <div className={`'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
                 </div>
             </div>
           </div>
@@ -296,7 +294,7 @@ export default function Home(props:any) {
             <div className='xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-8/12 w-12/12 '>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
-                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold xl:leading-10 leading-10'>
+                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-10 leading-10'>
                   We are a team of experts who believe everyone deserves more. So we gather together as the Dorea team to provide the best suit for your business. now our focus is small- to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in crypto dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>
@@ -305,9 +303,6 @@ export default function Home(props:any) {
 
 
         </div>
-
-
-      </main>
 
     </>
   )

@@ -8,13 +8,13 @@ export default function Footer(){
         <footer className={`${styles.footer} grid grid-cols-1 xl:mt-36 lg:mt-36 md:mt-36 sm:mt-16 mt-16`}>
           <div className="flex flex-grid xl:p-16 lg:p-16 md:p-16 sm:p-5 p-5">
             <div className='w-12/12'>
-              <p className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-lg'>About Us</p>
-              <a href='#ourgoal' className='grid grid-cols-1 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold pt-2'>
+              <p className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>About Us</p>
+              <a href='#ourgoal' className='grid grid-cols-1 xl:text-md lg:text-md md:text-md sm:text-sm text-[12px] text-center font-bold pt-2'>
                   Our Goal
               </a>
             </div>
             <div className='w-12/12 pl-16'>
-              <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-lg'>Community</p>
+              <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>Community</p>
               <div className='flex flex-grid items-center justify-center gap-2 pt-2'>
               
                 <a href="https://linkedin.com/cryptodorea" >
