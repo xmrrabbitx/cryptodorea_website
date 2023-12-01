@@ -50,7 +50,7 @@ export default function Home(props:any) {
 
     event.preventDefault();
 
-    const response = await fetch("http://localhost:3000/api/email/getEmailsPre",{
+    const response = await fetch("http://localhost:3000/api/email/sendWelcomeEmail",{
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -294,7 +294,7 @@ export default function Home(props:any) {
             <div className='xl:w-8/12 lg:w-8/12 md:w-12/12 sm:w-12/12 w-12/12 '>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
-                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-10 lg:leading-10 md:leading-10 leading-10'>
+                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
                   We are a team of experts who believe everyone deserves more. So we gather together as the Dorea team to provide the best suit for your business. now our focus is small- to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in crypto dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>

@@ -3,19 +3,22 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import * as React from 'react'; 
 import { renderToString } from 'react-dom/server'
 import {connect} from "../db"
+import fs from "fs"
+import path from 'path';
 var nodemailer = require("nodemailer");
-import {welcomeEmail} from "../../components/email/welcomeEmail/welcomeEmail"
+//import welcomeEmail from "../../components/email/welcomeEmail"
+//../../../../public/logos/doreaLogo.svg
 
 require('dotenv').config()
 
-const welcomeEmailTempelate:any = renderToString(welcomeEmail());
+//const welcomeEmailTempelate:any = renderToString(welcomeEmail());
 
-export default async function getEmailsPre(
+
+export default async function sendWelcomeEmail(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
    
-
     const emailAddress:string = req.body.emailAddress;
 
     const db = await connect();
@@ -48,8 +51,13 @@ export default async function getEmailsPre(
               'insert into emailspre (email_address,created_at) VALUES(?,NOW())',
               [emailAddress]
           );
-
+   
           if (emailspre[0].affectedRows > 0) {
+
+            let filePath = path.join(process.cwd() + "/pages/components/email/welcomeEmail/email.html");
+
+            var welcomeEmailTempelate = fs.readFileSync(filePath,"utf-8") 
+
 
             var transporter = nodemailer.createTransport({
               port: 465,
@@ -63,9 +71,14 @@ export default async function getEmailsPre(
           
             var mailOptions = {
               from: 'hadi.mirzaie300@gmail.com',
-              to: "hadi.mirzaie400@yahoo.com",
-              subject: "test email",
-              html: welcomeEmailTempelate
+              to: emailAddress,
+              subject: "🎉 Welcome to Crypto Dorea!",
+              html: welcomeEmailTempelate,
+              attachments: [{
+                filename: 'doreaLogo.png',
+                path:'./public/logos/doreaLogo.png',
+                cid: 'doreaLogo'
+              }]
             };
           
             transporter.sendMail(mailOptions, function (error:any, info:any) {
