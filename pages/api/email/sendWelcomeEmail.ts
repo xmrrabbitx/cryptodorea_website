@@ -85,7 +85,6 @@ export default async function sendWelcomeEmail(
               if (error) {
                 throw new Error(error);
               } else {
-                console.log("Email Sent");
                 return true;
               }
             });

@@ -11,10 +11,11 @@ import OrderPaidPic from "@/public/pics/orderpaid.svg"
 import CustomerPic from "@/public/pics/customer.svg"
 import Cookies from 'js-cookie';
 import { useState, useEffect, useRef  } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Home(props:any) {
-
 
   const [showContent, setShowContent] = useState(false)
 
@@ -41,10 +42,7 @@ export default function Home(props:any) {
   // email address
   const [emailAddress, setEmailAddress] = useState("");
 
-  // error and response of email
-  const [res, setRes] = useState("");
-  const [Error, setError] = useState("");
-
+  
   // handle email submission
   const EmailSubmit = async (event:any) => {
 
@@ -60,12 +58,11 @@ export default function Home(props:any) {
 
     const resp = await response.json();
     
+    // error and response of email
     if(resp.error){
-        setError(resp.error);
-        console.log(resp.error)
+        toast.error(resp.error);
     }else{
-        setRes(resp.success);
-        console.log(resp.success)
+        toast.success(resp.success);
     }
 
   }
@@ -81,7 +78,7 @@ export default function Home(props:any) {
       </Head>
 
         <div className='container max-w-full mt-5'>
-
+          <ToastContainer />
           <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-1'> 
             <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
               <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-18 mt-10`}>
@@ -98,7 +95,7 @@ export default function Home(props:any) {
               </p>
               <div>
                 <form onSubmit={EmailSubmit}> 
-                  <button id={styles.joinButtonAnchore} className="w-30 p-4 xl:ml-3 lg:mr-3 md:mr-3 sm:mr-3 mr-3 pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
+                  <button id={styles.joinButtonAnchore} className="w-30 p-4 xl:ml-0 lg:mr-3 md:mr-3 sm:mr-3 mr-3 pt-2.5 pb-2.5 text-center mt-5 xl:text-md/[19px]  text-sm/[17px]">
                       Join Waitlist
                   </button>
                   <input 
