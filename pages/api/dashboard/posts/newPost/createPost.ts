@@ -62,6 +62,9 @@ export default function postBlog(props:any){
                 <meta name="description" content="crypto dorea description must be here" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/doreaLogo.ico" />
+                <style dangerouslySetInnerHTML={{__html: \`
+                    img { border-radius: 8px }
+                \`}} />
             </Head>
             <div dangerouslySetInnerHTML={{__html: \`
             

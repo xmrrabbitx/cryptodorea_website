@@ -39,6 +39,8 @@ export default function newPost(props:any){
         [{ 'color': [] }, { 'background': ["red"] }],          // dropdown with defaults from theme
         [{ 'font': [] }],
         [{ 'align': [] }],
+
+        ['image'],
       
         ['clean'] 
     ],
@@ -47,7 +49,7 @@ export default function newPost(props:any){
 
   const placeholder = 'Compose an epic...';
 
-  const formats = ['bold', 'italic', 'underline', 'strike','code-block','blockquote','header','direction','size','color','align','font'];
+  const formats = ['bold', 'italic', 'underline', 'strike','code-block','blockquote','header','direction','size','color','align','font','image'];
 
   //const { quill, quillRef } = useQuill({ theme, modules, formats, placeholder });
   const { quill, quillRef } = useQuill({theme, formats, modules,  placeholder});
@@ -93,24 +95,23 @@ export default function newPost(props:any){
 
     return(
         <>
-         <form onSubmit={handleSubmit}> 
-          <label>
-              title
-          </label>
-          <input
-           type="text"
-           onChange={(event)=>setArticleTitle(event.target.value)}
-          />
-          <button type='submit' className='bg-grey'>post</button>
-        </form>
-        
-        <div className="h-full w-full flex items-center flex-col">
-        <div className="h-full w-[40vw]">
-          <div
-           ref={quillRef} />
-        </div>
-      </div>
-     
+            <form onSubmit={handleSubmit}> 
+              <label>
+                  title
+              </label>
+              <input
+              type="text"
+              onChange={(event)=>setArticleTitle(event.target.value)}
+              />
+              <button type='submit' className='bg-grey'>post</button>
+            </form>
+            
+            <div className="h-full w-full flex items-center flex-col">
+            <div className="h-full w-[40vw]">
+              <div
+              ref={quillRef} />
+            </div>
+          </div>
         </>
     )
           
