@@ -4,6 +4,7 @@ import LinkedinLogo from "@/public/pics/linkedin.svg"
 import TwitterLogo from "@/public/pics/twitter.svg"
 
 export default function Footer(){
+
     return(
         <footer className={`${styles.footer} grid grid-cols-1 xl:mt-36 lg:mt-36 md:mt-36 sm:mt-16 mt-16`}>
           <div className="flex flex-grid xl:p-16 lg:p-16 md:p-16 sm:p-5 p-5">

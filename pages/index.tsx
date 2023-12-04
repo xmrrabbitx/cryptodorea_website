@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '@/styles/landing/Home.module.css'
 import titleMainPic from "@/public/pics/titleCryptoPic.svg"
 import BitcoinPic from "@/public/pics/Bitcoin.svg"
@@ -16,6 +15,30 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Home(props:any) {
+
+
+    // Smooth scroll logic
+    const smoothScroll = (target:any) => {
+      const element = document.getElementById(target);
+      if (element) {
+        console.log("trigger")
+        element.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
+    }
+
+    // Handle click event
+    const handleClick = (event:any, target:any) => {
+      event.preventDefault();
+      smoothScroll(target);
+    };
+
+    // Add event listener to the link
+    const link = document.getElementById('ourgoal');
+    if (link) {
+      link.addEventListener('click', (event) => handleClick(event, 'ourgoal'));
+    }
 
   const [showContent, setShowContent] = useState(false)
 
@@ -274,16 +297,22 @@ export default function Home(props:any) {
                 <p className='text-slate-700 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-lg font-bold p-8 text-center'>get update on <span className='text-[#faa143]'>Crypto Dorea</span> product</p>
             </div>
             <div className='w-12/12 flex items-center justify-center'>
-                  <input type='text' placeholder='your email address...' className='text-md w-96 pl-4 p-3 border-2 border-solid border-gray-300 rounded-md'  />
+                  <input 
+                  onChange={(event)=>setEmailAddress(event.target.value)}
+                  type='text' 
+                  placeholder='your email address...' 
+                  className='text-md w-96 pl-4 p-3 border-2 border-solid border-gray-300 rounded-md'  />
             </div>
             <div className='w-12/12 flex items-center justify-center'>
+                <form onSubmit={EmailSubmit}> 
                   <button id={styles.joinButton} className="w-12/12 pt-2 pb-2 text-center mt-3">
                       Join Waitlist
                   </button>
+                </form>
             </div>
           </div>
 
-          <div className='flex items-center justify-center mt-4'>
+          <div id='ourgoal' className='flex items-center justify-center mt-4'>
               <hr className='h-0.5 xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-8/12 w-8/12  ml-0 bg-gray-200 border-0 bg-black xl:mt-24 lg:mt-24 md:mt-24 sm:mt-24 mt-10 ' />
           </div>
 
@@ -312,5 +341,3 @@ export async function getServerSideProps() {
   }
   
 }
-
-
