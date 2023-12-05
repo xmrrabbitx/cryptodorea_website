@@ -13,7 +13,7 @@ interface Data {
     [key: string]: string;
 }
 
-export default function newPost(props:any){
+export default function NewPost(props:any){
 
   const [content, setContent] = useState({});
   

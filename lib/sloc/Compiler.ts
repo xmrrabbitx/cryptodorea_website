@@ -1,4 +1,4 @@
-
+/*
 // let solc = require("solc");
 import solc from "solc";
 import { BufferSource } from "stream/web";
@@ -41,3 +41,4 @@ export default function Compiler(ContractSol:string,contractName:string){
 
 
 }
+*/

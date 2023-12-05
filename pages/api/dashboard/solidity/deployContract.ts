@@ -1,4 +1,4 @@
-
+/*
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs"
 import Compiler from '@/lib/sloc/Compiler';
@@ -60,3 +60,4 @@ export default async function deployContract(
   }
 
 }
+*/
