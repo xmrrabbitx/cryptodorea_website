@@ -16,30 +16,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home(props:any) {
 
-
-    // Smooth scroll logic
-    const smoothScroll = (target:any) => {
-      const element = document.getElementById(target);
-      if (element) {
-        console.log("trigger")
-        element.scrollIntoView({
-          behavior: 'smooth',
-        });
-      }
-    }
-
-    // Handle click event
-    const handleClick = (event:any, target:any) => {
-      event.preventDefault();
-      smoothScroll(target);
-    };
-
-    // Add event listener to the link
-    const link = document.getElementById('ourgoal');
-    if (link) {
-      link.addEventListener('click', (event) => handleClick(event, 'ourgoal'));
-    }
-
   const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {

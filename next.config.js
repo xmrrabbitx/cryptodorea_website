@@ -1,9 +1,11 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 
 const path = require('path');
 
 const nextConfig = {
-  debug: true,
+  //debug: true,
   reactStrictMode: true,
 
   webpack: (config) => {
