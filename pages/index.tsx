@@ -47,7 +47,7 @@ export default function Home(props:any) {
 
     event.preventDefault();
 
-    const response = await fetch("http://localhost:3000/api/email/sendWelcomeEmail",{
+    const response = await fetch("/api/email/test",{
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
