@@ -31,5 +31,5 @@ export default async function createPost(
 
         return res.status(400).json({error:"create file doesnt successful!"});
     });
-
+    return res.status(200).json({succ:"create file successful!"});
 }
