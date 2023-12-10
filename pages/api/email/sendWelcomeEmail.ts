@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import * as React from 'react'; 
 import { renderToString } from 'react-dom/server'
 import {connect} from "../db"
-import fs from "fs"
+import fs from "fs";
 import path from 'path';
 var nodemailer = require("nodemailer");
 //import welcomeEmail from "../../components/email/welcomeEmail"

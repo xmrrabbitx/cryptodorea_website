@@ -8,11 +8,6 @@ import Link from 'next/link';
 import 'react-quill/dist/quill.snow.css';
 import { useQuill } from "react-quilljs";
 
-
-interface Data {
-    [key: string]: string;
-}
-
 export default function NewPost(props:any){
 
   const [content, setContent] = useState({});
