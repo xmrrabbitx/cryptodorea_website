@@ -70,7 +70,7 @@ export default function NewPost(props:any){
 
     event.preventDefault();
 
-    const response = await fetch("http://localhost:3000/api/dashboard/posts/newPost/createPost",{
+    const response = await fetch("/api/dashboard/posts/newPost/createPost",{
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
