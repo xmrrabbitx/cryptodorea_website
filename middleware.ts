@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
   const cookies = request.cookies;
   let authCookie:any = cookies.get("authToken");
   let response = NextResponse.next();
-
+/*
     if(authCookie){
 
       let authCookieValue:any = authCookie.value;
@@ -35,7 +35,7 @@ export function middleware(request: NextRequest) {
     }else{
         return NextResponse.redirect(new URL('/auth/signin', request.url));
     }
-
+*/
 }
  
 // See "Matching Paths" below to learn more
