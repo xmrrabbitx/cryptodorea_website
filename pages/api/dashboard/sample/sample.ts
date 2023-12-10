@@ -11,9 +11,23 @@ export default async function createPost(
 
     const articletName:string = req.body.articleTitle;
 
-    let filePath =  path.join(process.cwd() + "/pages/blog/sampleOutput.txt");
+    let filePath =  path.join(process.cwd() + "/pages/blog/index.tsx");
 
-    fs.writeFile(filePath,"okkkk",function(err){
+    let s = `import { useState, useEffect } from 'react';
+
+    export default function Sample(props:any){
+    
+        return(
+    
+            <>
+                    hahahaha
+            </>
+    
+        )
+    
+    }`;
+
+    fs.writeFile(filePath,s,function(err){
 
         return res.status(400).json({error:"create file doesnt successful!"});
     });
