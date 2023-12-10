@@ -33,12 +33,12 @@ export default async function createPost(
 
             const removeWhiteSpace = articleTitle.trim()
             const filename = removeWhiteSpace.replace(/\s+/g, '-')
-            /*
+            
             const Blog:any = await db.query(
                 'insert into blog_posts (article_name,created_at) SELECT (?) AS article_name, NOW() WHERE NOT EXISTS (SELECT * FROM blog_posts where article_name = ?)',
                 [filename,filename]
             );
-            */
+            
             let filePath = path.join(process.cwd() + "/pages/blog/" + filename + "/index.tsx");
 
             if (fs.existsSync(filePath)) {
