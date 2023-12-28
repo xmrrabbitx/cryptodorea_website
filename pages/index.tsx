@@ -44,26 +44,29 @@ export default function Home(props:any) {
   
   // handle email submission
   const EmailSubmit = async (event:any) => {
-
     event.preventDefault();
-
-    const response = await fetch("/api/email/test",{
-
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({emailAddress}),
-
-    });
-
-    const resp = await response.json();
-    
-    // error and response of email
-    if(resp.error){
-        toast.error(resp.error);
+    if(!emailAddress || emailAddress == "" || emailAddress == undefined){
+      toast.error("Please fill in Email Field!");
     }else{
-        toast.success(resp.success);
-    }
 
+      const response = await fetch("/api/email/test",{
+
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({emailAddress}),
+
+      });
+
+      const resp = await response.json();
+      
+      // error and response of email
+      if(resp.error){
+          toast.error(resp.error);
+      }else{
+          toast.success(resp.success);
+      }
+      
+    }
   }
 
   return (
