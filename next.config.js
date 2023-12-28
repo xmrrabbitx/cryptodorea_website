@@ -5,6 +5,7 @@
 const path = require('path');
 
 const nextConfig = {
+  output: 'standalone',
   //debug: true,
   reactStrictMode: true,
 

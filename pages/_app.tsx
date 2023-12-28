@@ -6,7 +6,7 @@ import LandingLayout from "./components/landing/Layout";
 import LayoutDash from './components/dashboard/LayoutDash'
 
 export default function App({ Component, pageProps:{...pageProps}, router }: AppProps) {
-  
+  /*
   if (router.pathname.startsWith('/dashboard')) {
     
     return  <LayoutDash>
@@ -14,13 +14,13 @@ export default function App({ Component, pageProps:{...pageProps}, router }: App
             </LayoutDash>
 
   }else{
-
+*/
     // change this to Layout after launching product
     return <LandingLayout>
                 <Component {...pageProps} />
             </LandingLayout>
 
-  }
+  //}
  
  
   
