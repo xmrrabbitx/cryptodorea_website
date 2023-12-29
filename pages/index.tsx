@@ -49,7 +49,7 @@ export default function Home(props:any) {
       toast.error("Please fill in Email Field!");
     }else{
 
-      const response = await fetch("/api/email/test",{
+      const response = await fetch("/api/email/sendWelcomeEmail",{
 
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -65,7 +65,7 @@ export default function Home(props:any) {
       }else{
           toast.success(resp.success);
       }
-      
+
     }
   }
 
@@ -76,7 +76,7 @@ export default function Home(props:any) {
         <title>Crypto Dorea: next generation crypto loyalty program</title>
         <meta name="description" content="crypto dorea description must be here" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/doreaLogo.ico" />
+        <link rel="icon" href="/dorea.png"/>
       </Head>
 
         <div className='container max-w-full mt-5'>
@@ -113,7 +113,7 @@ export default function Home(props:any) {
             </div>
             <div className={` w-12/12 pr-10 flex flow-row justify-center items-center`}>
               <div className='flex flow-row justify-center items-center'>
-                <Image className={`${styles.titleMainPic} xl:mt-5 2xl:w-full xl:w-11/12 lg:w-full md:w-96 sm:60 xl:block lg:block md:block sm:block hidden`} src={titleMainPic} alt='title image' width={550} height={550} />  
+                <Image className={`${styles.titleMainPic} xl:mt-5 2xl:w-full xl:w-11/12 lg:w-full md:w-96 sm:60 xl:block lg:block md:block sm:block hidden`} src={titleMainPic} alt='title image' width={550} height={550}  priority  />  
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function Home(props:any) {
 
             <div className='xl:col-span-1 xl:inline lg:inline md:hidden sm:hidden hidden '></div>
             <div className='xl:col-span-1 col-span-1'>
-              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl text-center`}>21%</div>
+              <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center  xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl text-center`}>21%</div>
               <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center xl:text-base lg:text-base md:text-base sm:text-base text-[12px]`}>US adults hold Cryptocurrency</div>
             </div>
             <div className='xl:col-span-1 col-span-1'>
@@ -174,6 +174,7 @@ export default function Home(props:any) {
                 width={550}
                 height={550}
                 alt='Crypto Dorea Customer'
+                loading='lazy'
                 />
 
                 <Image 

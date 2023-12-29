@@ -41,6 +41,7 @@ export default async function sendWelcomeEmail(
           "select * from emailspre where email_address = ?",
           [emailAddress]
       );
+
         if(Checkemailspre[0].length > 0){
            
             return res.status(404).json({error:"we already got you..."})
