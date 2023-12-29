@@ -37,5 +37,6 @@ next-env.d.ts
 
 
 /pages/dashboard
-/pages/api/auth
 /pages/api/dashboard
+/pages/auth
+/pages/api/auth
