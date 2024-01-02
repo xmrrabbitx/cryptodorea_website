@@ -88,7 +88,7 @@ export default function Home(props:any) {
                 to Loyal Customers
               </p>
               <p className={`${styles.titleCaption} xl:text-lg text-sm mt-6 `}>
-                Create Crypto Loyalty Program for your Business
+                Create a Crypto Loyalty Program for your Business
               </p>
               <p className='flex mt-4'>
                 <span className={`${styles.titleCaption} pt-1 text-sm`}>get paid on:</span>
@@ -247,7 +247,7 @@ export default function Home(props:any) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                   </svg>
                   </div>
-                  <p className='pb-4'> Create Crypto <br /> Cashback Program</p>
+                  <p className='pb-4'> Create a Crypto <br /> Cashback Program</p>
                   </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
                   <div className='flex items-center justify-center pb-3'>
@@ -255,7 +255,7 @@ export default function Home(props:any) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
                   </svg>
                   </div>
-                  <p className='pb-4'> Customize <br/> Cashback Program</p>
+                  <p className='pb-4'> Customize Your <br/> Cashback Program</p>
                     
                     </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
@@ -301,7 +301,7 @@ export default function Home(props:any) {
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
                 <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
-                  We are a team of experts who believe everyone deserves more. So we gather together as the Dorea team to provide the best suit for your business. now our focus is small- to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in crypto dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
+                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best suit for your business. Now our focus is on small- to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in Crypto Dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>
             </div>
