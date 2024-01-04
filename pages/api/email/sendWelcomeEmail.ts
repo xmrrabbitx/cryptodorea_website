@@ -38,7 +38,7 @@ export default async function sendWelcomeEmail(
       }else{
 
         const Checkemailspre:any = await db.query(
-          "select * from emailspre where email_address = ?",
+          "select * from welcome_email where email_address = ?",
           [emailAddress]
       );
 
@@ -49,7 +49,7 @@ export default async function sendWelcomeEmail(
           }else{
       
             const emailspre:any = await db.query(
-              'insert into emailspre (email_address,created_at) VALUES(?,NOW())',
+              'insert into welcome_email (email_address,created_at) VALUES(?,NOW())',
               [emailAddress]
           );
    
@@ -61,19 +61,20 @@ export default async function sendWelcomeEmail(
 
 
             var transporter = nodemailer.createTransport({
-              port: 465,
-              host: "smtp.gmail.com",
-              service: "gmail",
+              port: 587,
+              host: "smtp.c1.liara.email",
+              //service: "gmail",
+              tls: true,
               auth: {
-                user: process.env.EMAIL,
+                user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASSWORD,
               },
             });
           
             var mailOptions = {
-              from: 'hadi.mirzaie300@gmail.com',
+              from: 'support@cryptodorea.io',
               to: emailAddress,
-              subject: "🎉 Welcome to Crypto Dorea!",
+              subject: "🎉 Welcome to Crypto Dorea",
               html: welcomeEmailTempelate,
               attachments: [{
                 filename: 'doreaLogo.png',
