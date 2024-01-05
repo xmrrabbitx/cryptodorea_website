@@ -72,7 +72,7 @@ export default async function sendWelcomeEmail(
             });
           
             var mailOptions = {
-              from: 'support@cryptodorea.io',
+              from: 'welcome@cryptodorea.io',
               to: emailAddress,
               subject: "🎉 Welcome to Crypto Dorea",
               html: welcomeEmailTempelate,
