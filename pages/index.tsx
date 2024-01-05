@@ -73,8 +73,8 @@ export default function Home(props:any) {
     <>
 
       <Head>
-        <title>Crypto Dorea: the next Generation of Crypto Cashback program</title>
-        <meta name="description" content="crypto dorea description must be here" />
+        <title>Crypto Dorea: The Next Generation of Crypto Cashback Program</title>
+        <meta name="description" content="Create a Crypto CashBack Loyalty Program for your Business" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/doreaLogo.png"/>
       </Head>
@@ -123,11 +123,11 @@ export default function Home(props:any) {
             <div className='xl:col-span-1 xl:inline lg:inline md:hidden sm:hidden hidden '></div>
             <div className='xl:col-span-1 col-span-1'>
               <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center 2xl:text-7xl xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl text-center`}>21%</div>
-              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center 2xl:text-xl xl:text-base lg:text-base md:text-base sm:text-base text-[12px]`}>US adults hold Cryptocurrency</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center 2xl:text-xl xl:text-base lg:text-base md:text-base sm:text-base text-[12px]`}>of US adults hold Crypto</div>
             </div>
             <div className='xl:col-span-1 col-span-1'>
               <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center 2xl:text-7xl xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl xl:m-0 text-center`}>2.3K</div>
-              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center 2xl:text-xl xl:text-base lg:text-base md:text-base sm:text-base  text-[12px]`}>Around 2,300 businesses accept Bitcoin in the U.S</div>
+              <div className={`${styles.percentsDescription} xl:text-center lg:text-center md:text-center sm:text-center text-center 2xl:text-xl xl:text-base lg:text-base md:text-base sm:text-base  text-[12px]`}>Roughly 2,300 businesses accept Bitcoin in the U.S</div>
             </div>
             <div className='xl:col-span-1 col-span-1'>
             <div className={`${styles.percentsNumbers} xl:text-center lg:text-center md:text-center sm:text-center 2xl:text-7xl xl:text-6xl lg:text-6xl md:text-6xl sm:text-6xl text-4xl  xl:mt-0 text-center`}>45M</div>
@@ -162,7 +162,7 @@ export default function Home(props:any) {
             <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 col-span-2 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5 xl:mt-24 mt-5'>
               <p id={styles.doreaDefinitionTitle} className='2xl:text-4xl text-xl font-bold'>What is Crypto Dorea?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
-                <p id={styles.doreaDefinitionText} className='xl:text-lg text-base xl:leading-9 leading-8  font-bold'>Crypto Dorea is the new way of Loyalty Program brougth to your business using auto pay system powered by smart contract.</p>
+                <p id={styles.doreaDefinitionText} className='xl:text-lg text-base xl:leading-9 leading-8  font-bold'>Crypto Dorea is a new innovative Loyalty Program brought to your business using our auto-pay system powered by smart contracts.</p>
               </div>
             </div>
             <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 col-span-2 xl:p-0 lg:p-0  md:p-0 sm:p-0 p-5 grid items-center justify-center relative'>
@@ -238,7 +238,7 @@ export default function Home(props:any) {
 
           <div className='grid grid-cols-1 gap-1 xl:mt-40 lg:mt-40 md:mt-40 sm:mt-40 mt-16 xl:pr-0 md:pr-5 pr-0'>
             <div className='w-12/12 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5'>
-            <p id={styles.doreaDefinitionTitle} className='2xl:text-4xl text-xl font-bold'>How it works?</p>
+            <p id={styles.doreaDefinitionTitle} className='2xl:text-4xl text-xl font-bold'>How does it work?</p>
             <div className='grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-5'>
                   <div className={` 'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
@@ -301,7 +301,7 @@ export default function Home(props:any) {
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
                 <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
-                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best suit for your business. Now our focus is on small- to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in Crypto Dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
+                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best exprience for your business. Now our focus is on small to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in Crypto Dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>
             </div>

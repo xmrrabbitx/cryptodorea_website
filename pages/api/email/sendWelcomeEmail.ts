@@ -72,15 +72,17 @@ export default async function sendWelcomeEmail(
             });
           
             var mailOptions = {
-              from: 'welcome@cryptodorea.io',
+              from: 'Dorea Welcome <welcome@cryptodorea.io>',
               to: emailAddress,
               subject: "🎉 Welcome to Crypto Dorea",
               html: welcomeEmailTempelate,
+              /*
               attachments: [{
                 filename: 'doreaLogo.png',
                 path:'./public/logos/doreaLogo.png',
                 cid: 'doreaLogo'
               }]
+              */
             };
           
             transporter.sendMail(mailOptions, function (error:any, info:any) {

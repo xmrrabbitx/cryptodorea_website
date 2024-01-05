@@ -16,13 +16,10 @@ export default function Footer(){
             </div>
             <div className='w-12/12 pl-16'>
               <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>Community</p>
-              <div className='flex flex-grid items-center justify-center gap-2 pt-2'>
+              <div className='flex flex-grid items-center justify-center mt-1'>
               
-                <a href="https://linkedin.com/cryptodorea" >
-                  <Image className="" width={30} height={30} src={TwitterLogo} alt="Twitter logo" />
-                </a>
-                <a href="https://x.com/cryptodorea" >
-                  <Image className='' width={30} height={30} src={LinkedinLogo} alt="Linkedin logo" />
+                <a href="https://www.linkedin.com/company/cryptodorea/" >
+                  <Image className='' width={25} height={25} src={LinkedinLogo} alt="Linkedin logo" />
                 </a>
               
               </div>
