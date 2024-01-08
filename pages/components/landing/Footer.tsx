@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from '@/styles/landing/Home.module.css'
 import LinkedinLogo from "@/public/pics/linkedin.svg"
 import TwitterLogo from "@/public/pics/twitter.svg"
+import { Link } from 'react-router-dom'
 
 export default function Footer(){
 
@@ -24,7 +25,12 @@ export default function Footer(){
               
               </div>
             </div>
-           
+            <div className='w-12/12 pl-16'>
+              <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>Contact Us</p>
+              <p className='mt-2 text-center'>
+                  <a href='mailto:contact@cryptodorea.io' >Email</a>
+              </p>
+            </div>
           </div>
 
           <p className='text-center font-bold text-gray-800 mt-40 xl:mb-5 mb-16 xl:text-base text-xs'> 
