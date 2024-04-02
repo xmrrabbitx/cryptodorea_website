@@ -1,8 +1,6 @@
-
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {isEmpty} from "lodash";
 var solc = require('solc');
-
 
 export default function compile(
     req: NextApiRequest,
