@@ -7,14 +7,14 @@ export default function compile(
     res: NextApiResponse
 ) {
 
-    const smartContract = req.body;
+    const smartContract = JSON.stringify(req.body);
 
     if(!isEmpty(smartContract)) {
 
-        var output = JSON.parse(solc.compile(JSON.stringify(smartContract)));
+        var output = JSON.parse(solc.compile(smartContract));
 
         let contractInfo:any = [];
-        for (let contractName in output.contracts['test.sol']) {
+        for (let contractName in output.contracts["test.sol"]) {
 
             contractInfo['abi'] = JSON.stringify(output.contracts['test.sol'][contractName].abi);
             contractInfo['bytecode'] = output.contracts['test.sol'][contractName].evm.bytecode.object;
