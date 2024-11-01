@@ -11,7 +11,7 @@ export default function compile(
 
     if(!isEmpty(smartContract)) {
 
-        var output = JSON.parse(solc.compile(smartContract));
+        const output = JSON.parse(solc.compile(smartContract));
 
         let contractInfo:any = [];
         for (let contractName in output.contracts["test.sol"]) {
@@ -21,7 +21,7 @@ export default function compile(
 
         }
 
-        return res.status(200).json({success: {"abi":contractInfo['abi'],"bytecode":contractInfo['bytecode']}})
+        return res.status(200).json({status: 'success', body:{"abi":contractInfo['abi'],"bytecode":contractInfo['bytecode']}})
 
     }
 
