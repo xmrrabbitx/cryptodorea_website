@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100" viewBox="0 0 250 100">
+  <g id="cashbackETH" transform="translate(3940 -1979)">
+    <g id="cashback" transform="translate(-4406 1591)">
+      <rect id="buy" width="250" height="100" rx="10" transform="translate(466 388)" fill="#252525"/>
+    </g>
+    <text id="You_ve_Received:_20_Cashback" data-name="You&apos;ve Received:
+$20 Cashback" transform="translate(-3856 2007)" fill="#fff" font-size="17" font-family="SegoeUI, Segoe UI"><tspan x="0" y="18">You&apos;ve Received:</tspan><tspan x="0" y="40">$20 Cashback</tspan></text>
+    <circle id="Ellipse_27" data-name="Ellipse 27" cx="25" cy="25" r="25" transform="translate(-3920 2004)" fill="#faca43"/>
+    <path id="Path_121" data-name="Path 121" d="M28.432,20.207,18.219,27.4,8,20.207,18.219,0Zm-10.213,9.5L8,22.516,18.219,39.671,28.439,22.516l-10.219,7.19Z" transform="translate(-3913.219 2009.165)"/>
+  </g>
+</svg>

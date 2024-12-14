@@ -103,42 +103,42 @@
     position: relative;
     display: block;
     object-fit: cover;
-  }
+}
 
-  .slideshow {
-    position: relative;
+.slideshow {
+   position: relative;
    width: 500px;
    height: 500px;
    transition: display 2s;
-  }
+}
 
-  .slideVisible {
+.slideVisible {
 
     display: block;
 
-  }
+}
 
-  .slideHidden {
+.slideHidden {
 
     display: none;
-  }
+}
 
-  .infoBoxs{
+.infoBoxs{
 
     color: rgb(67, 67, 67);
     background-color: #f0f0f0;
     text-align: center;
     border-radius: 6px;
 
-  }
+}
 
-  #infoBoxs{
+#infoBoxs{
 
     
 
-  }
+}
 
-  .footer{
+.footer{
     background-color: #f0f0f0;
     font-family: Poppins-Regular;
-  }
+}
