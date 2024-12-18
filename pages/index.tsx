@@ -166,8 +166,8 @@ export default function Home(props:any) {
                       <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 ">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
                       </svg>
-                    </div>
-                    <p className='pb-4'>Integrated into <br /> your E-Commerce</p>
+                    </div> 
+                    <p className='pb-4 xl:text-[17px] lg:text-[16px] md:text-[16px] sm:text-[16px] text-[16px]'>Integrated into <br /> your E-Commerce</p>
 
                   </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
@@ -177,7 +177,7 @@ export default function Home(props:any) {
                   </svg>
 
                   </div>
-                  <p className='pb-4'>Simple Decentralised <br /> Payment Mechanism</p>
+                  <p className='pb-4 xl:text-[17px] lg:text-[16px] md:text-[16px] sm:text-[16px] text-[16px]'>Simple Decentralised <br /> Payment Mechanism</p>
                   </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
                   <div className=' flex items-center justify-center pb-3'>
@@ -185,7 +185,7 @@ export default function Home(props:any) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                   </svg>
                   </div>
-                  <p className='pb-4'>Low Cost <br/> Blockchain Fees</p>
+                  <p className='pb-4 xl:text-[17px] lg:text-[16px] md:text-[16px] sm:text-[16px] text-[16px]'>Low Cost <br/> Blockchain Fees</p>
                     
                   </div>
                   <div className={`'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
@@ -204,7 +204,7 @@ export default function Home(props:any) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                   </svg>
                   </div>
-                  <p className='pb-4'> Create a Crypto <br /> Cashback Program</p>
+                  <p className='pb-4 xl:text-[17px] lg:text-[16px] md:text-[16px] sm:text-[16px] text-[16px]'> Create a Crypto <br /> Cashback Program</p>
                   </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
                   <div className='flex items-center justify-center pb-3'>
@@ -212,7 +212,7 @@ export default function Home(props:any) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
                   </svg>
                   </div>
-                  <p className='pb-4'> Customize Your <br/> Cashback Program</p>
+                  <p className='pb-4 xl:text-[17px] lg:text-[16px] md:text-[16px] sm:text-[16px] text-[16px]'> Customize Your <br/> Cashback Program</p>
                     
                     </div>
                   <div id='infoBoxs' className={`${styles.infoBoxs} hover:bg-[#FACA43] xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1 col-span-5 xl:text-lg lg:text-lg md:text-lg sm:text-lg text-base font-bold p-8`}>
@@ -221,7 +221,7 @@ export default function Home(props:any) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
                   </svg>
                   </div>
-                  <p className='pb-4'>Decenterlised Payment <br/> to Your Customers</p>
+                  <p className='pb-4 xl:text-[17px] lg:text-[16px] md:text-[16px] sm:text-[16px] text-[16px]'>Decenterlized Payment <br/> to Your Customers</p>
                     
                     </div>
                   <div className={`'xl:col-span-1 xl:inline lg:hidden md:hidden sm:hidden hidden'`}></div>
@@ -243,7 +243,7 @@ export default function Home(props:any) {
             <div className='xl:w-10/12 lg:w-10/12 md:w-12/12 sm:w-12/12 w-12/12 '>
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
-                <p id={styles.doreaDefinitionText} className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
+                <p id={styles.doreaDefinitionText} className='xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[14px] text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
                   We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best experience for your business. Now our focus is on small to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in Crypto Dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>

@@ -10,14 +10,14 @@ export default function Footer(){
         <footer className={`${styles.footer} grid grid-cols-1 xl:mt-36 lg:mt-36 md:mt-36 sm:mt-16 mt-16`}>
           <div className="flex flex-grid xl:p-16 lg:p-16 md:p-16 sm:p-5 p-5">
             <div className='w-12/12'>
-              <p className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>About Us</p>
-              <a href='#ourgoal' className='grid grid-cols-1 xl:text-md lg:text-md md:text-md sm:text-sm text-[12px] text-center font-bold pt-2'>
+              <p className='xl:text-lg lg:text-[14px] md:text-[16px] sm:text-[16px] text-[12px] text-center'>About Us</p>
+              <a href='#ourgoal' className='grid grid-cols-1 xl:text-md lg:text-md md:text-md sm:text-sm text-[12px] text-center font-bold pt-3'>
                   Our Goal
               </a>
             </div>
             <div className='w-12/12 pl-16'>
-              <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>Community</p>
-              <div className='flex flex-grid items-center justify-center mt-1'>
+              <p  className='xl:text-lg lg:text-[14px] md:text-[16px] sm:text-[16px] text-[12px] text-center'>Community</p>
+              <div className='flex flex-grid items-center justify-center mt-3'>
               
                 <a href="https://www.linkedin.com/company/cryptodorea/" >
                   <Image className='' width={25} height={25} src={LinkedinLogo} alt="Linkedin logo" />
@@ -26,8 +26,8 @@ export default function Footer(){
               </div>
             </div>
             <div className='w-12/12 pl-16'>
-              <p  className='xl:text-lg lg:text-lg md:text-lg sm:text-lg text-[14px] text-center'>Contact Us</p>
-              <p className='mt-2 text-center'>
+              <p  className='xl:text-lg lg:text-[14px] md:text-[16px] sm:text-[16px] text-[12px] text-center'>Contact Us</p>
+              <p className='mt-3 text-center'>
                   <a href='mailto:contact@cryptodorea.io' >Email</a>
               </p>
             </div>
