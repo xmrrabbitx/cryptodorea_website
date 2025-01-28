@@ -50,7 +50,7 @@ export default function Home(props:any) {
             <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
               <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-18 mt-10`}>
                 Crypto Cashback <br />
-                to Loyal Customers
+                for Loyal Customers
               </p>
               <p className={`${styles.titleCaption} xl:text-lg text-sm mt-6 `}>
                 Create a Crypto Loyalty Program for your Business
@@ -244,7 +244,8 @@ export default function Home(props:any) {
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
                 <p id={styles.doreaDefinitionText} className='xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[14px] text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
-                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best experience for your business. Now our focus is on small to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. There is no limitation in Crypto Dorea; you can launch your own crypto campaign cashback and give rewards to your most loyal customers using our Auto-Pay system at your specific date and time. We believe in privacy, so none of the information of your users will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
+                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best experience for your business. Now our focus is on small to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. 
+                  There is no limitation in Crypto Dorea; you can launch your crypto campaign cashback and give rewards to your most loyal customers using blockchain payment system on a specific date and time. We believe in privacy, so none of your user’s information will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>
             </div>
