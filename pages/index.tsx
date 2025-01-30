@@ -57,7 +57,7 @@ export default function Home(props:any) {
               </p>
               <p className='flex mt-4'>
                 <span className={`${styles.titleCaption} pt-1 text-sm`}>get paid on:</span>
-                <span><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></span>
+                <span><a href="https://ethereum.org/" className=''><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></a></span>
               </p>
               <div>
               </div>
