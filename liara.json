@@ -1,5 +1,8 @@
 {
-    "next": {
-      "modifyConfig": false
-    }
+  "app":"flamboyant-williams-htcxae-vc",
+  "port":80,
+  "build":{
+  "location":"iran"
+  },
+  "disks":[]
   }

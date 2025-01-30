@@ -244,8 +244,7 @@ export default function Home(props:any) {
               <p id={styles.doreaDefinitionTitle} className='text-xl font-bold'>Our Goal?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 lg:ml-14 md:ml-14 sm:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
                 <p id={styles.doreaDefinitionText} className='xl:text-[14px] lg:text-[14px] md:text-[14px] sm:text-[14px] text-[16px] font-bold xl:leading-[47px] lg:leading-10 md:leading-10 leading-9'>
-                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best experience for your business. Now our focus is on small to mid-sized businesses because most crypto loyalty programs are expensive and not efficient. 
-                  There is no limitation in Crypto Dorea; you can launch your crypto campaign cashback and give rewards to your most loyal customers using blockchain payment system on a specific date and time. We believe in privacy, so none of your user’s information will be saved in our database. All the processes are decentralized and transparent on supported blockchains.
+                  We are a team of experts who believe everyone deserves more. So, we gather together as the Dorea team to provide the best experience for your business. Now our focus is on small to mid-sized businesses because most crypto loyalty programs are expensive and inefficient. There is no limitation in Crypto Dorea; you can launch your crypto campaign cashback and give rewards to your most loyal customers using the blockchain payment system on a specific date and time. We believe in privacy, so our database will not save your user’s information. All the processes are decentralized and transparent on supported blockchains.
                 </p>
               </div>
             </div>
