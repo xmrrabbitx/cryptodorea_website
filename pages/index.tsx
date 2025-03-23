@@ -46,27 +46,36 @@ export default function Home(props:any) {
       </Head>
 
         <div className='container 2xl:mx-auto 2xl:max-w-screen-2xl  max-w-full  mt-5'>
-          <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-1'> 
-            <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
-              <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-18 mt-10`}>
-                Crypto Cashback <br />
-                for Loyal Customers
-              </p>
-              <p className={`${styles.titleCaption} xl:text-lg text-sm mt-6 `}>
-                Create a Crypto Loyalty Program for your Business
-              </p>
-              <p className='flex mt-4'>
-                <span className={`${styles.titleCaption} pt-1 text-sm`}>get paid on:</span>
-                <span><a href="https://ethereum.org/" className=''><Image className='ml-2 xl:w-8 w-7' src={EthPic} alt='Ethereum image' width={35} height={35} /></a></span>
-              </p>
-              <div>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-1'>
+              <div className='w-12/12 2xl:pl-28 xl:pl-20 lg:pl-20 md:pl-8 sm:pl-4 pl-4'>
+                  <p className={`${styles.titleMain} 2xl:6xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl xl:mt-36 lg:mt-36 md:mt-16 sm:mt-18 mt-10`}>
+                      Crypto Cashback <br/>
+                      for Loyal Customers
+                  </p>
+                  <p className={`${styles.titleCaption} xl:text-lg text-sm mt-6 `}>
+                      Create a Crypto Loyalty Program for your Business
+                  </p>
+                  <p className='flex mt-4'>
+                      <span className={`${styles.titleCaption} pt-1 text-sm`}>get paid in:</span>
+                      <span><a href="https://ethereum.org/" className=''><Image className='ml-2 xl:w-8 w-7' src={EthPic}
+                                                                                alt='Ethereum image' width={35}
+                                                                                height={35}/></a></span>
+                  </p>
+
+                  <p className='flex mt-4'>
+                      <span className={`${styles.titleCaption} pt-1 text-sm`}>
+                          <a href="https://wordpress.org/plugins/crypto-dorea-crypto-cashback-for-woocommerce/" className='font-bold underline'>WordPress plugin is now available!</a>
+                      </span>
+                  </p>
+
+                  <div>
+                  </div>
+                  <div>
+                      <div></div>
+                  </div>
               </div>
-              <div>
-                  <div></div>
-              </div>
-            </div>
-            <div className={` w-12/12 pr-10 flex flow-row justify-center items-center`}>
-              <div className='flex flow-row justify-center items-center'>
+              <div className={` w-12/12 pr-10 flex flow-row justify-center items-center`}>
+                  <div className='flex flow-row justify-center items-center'>
                 <Image className={`${styles.titleMainPic} xl:mt-5 2xl:w-full xl:w-full lg:w-full md:w-96 sm:60 xl:block lg:block md:block sm:block hidden`} src={titleMainPic} alt='title image' width={550} height={550}  priority  />  
               </div>
             </div>
@@ -116,7 +125,7 @@ export default function Home(props:any) {
             <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 col-span-2 xl:ml-28 lg:ml-12 md:ml-8 sm:ml-0 xl:p-0 lg:p-0 md:p-0 sm:p-5 p-5 xl:mt-24 mt-5'>
               <p id={styles.doreaDefinitionTitle} className='2xl:text-4xl text-xl font-bold'>What is Crypto Dorea?</p>
               <div id={styles.doreaDefinition} className='mt-5 xl:ml-14 ml-0 pr-3 pl-7 pt-7 pb-7 rounded-md'>
-                <p id={styles.doreaDefinitionText} className='xl:text-lg text-base xl:leading-9 leading-8  font-bold'>Crypto Dorea is a new innovative Loyalty Program brought to your business using crypto payment system powered by smart contracts.</p>
+                <p id={styles.doreaDefinitionText} className='xl:text-lg text-base xl:leading-9 leading-8  font-bold'>Crypto Dorea is a new innovative Loyalty Program for your business using crypto payment system powered by smart contracts.</p>
               </div>
             </div>
             <div className='xl:col-span-1 lg:col-span-1 md:col-span-1 col-span-2 xl:p-0 lg:p-0  md:p-0 sm:p-0 p-5 grid items-center justify-center relative'>
