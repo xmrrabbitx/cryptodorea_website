@@ -265,11 +265,12 @@ export default function Home(props:any) {
     </>
   )
 }
-
+/*
 export async function getServerSideProps() {
 
   return {
     props:{}
   }
-  
+
 }
+ */
