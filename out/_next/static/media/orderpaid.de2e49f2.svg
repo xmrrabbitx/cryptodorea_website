@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100" viewBox="0 0 250 100">
+  <g id="order_paid" data-name="order paid" transform="translate(-466 -271)">
+    <rect id="buy" width="250" height="100" rx="10" transform="translate(466 271)" fill="#fff"/>
+    <circle id="Ellipse_22" data-name="Ellipse 22" cx="25" cy="25" r="25" transform="translate(483 296)" fill="#ebeaea"/>
+    <path id="Icon_awesome-shopping-cart" data-name="Icon awesome-shopping-cart" d="M22.922,13.536l2.052-9.344a1.069,1.069,0,0,0-1.016-1.317H6.91L6.512.862A1.051,1.051,0,0,0,5.492,0H1.042A1.06,1.06,0,0,0,0,1.078V1.8A1.06,1.06,0,0,0,1.042,2.875H4.075L7.124,18.3A2.531,2.531,0,0,0,5.9,20.484,2.474,2.474,0,0,0,8.333,23a2.474,2.474,0,0,0,2.431-2.516,2.551,2.551,0,0,0-.73-1.8h9.1a2.551,2.551,0,0,0-.73,1.8,2.432,2.432,0,1,0,4.861,0,2.524,2.524,0,0,0-1.371-2.264l.239-1.091a1.069,1.069,0,0,0-1.016-1.317H9.467l-.284-1.438H21.906A1.05,1.05,0,0,0,22.922,13.536Z" transform="translate(493.5 309.5)"/>
+    <text id="Order_Paid:_150" data-name="Order Paid:
+$150" transform="translate(560 296)" font-size="17" font-family="Poppins-Regular, Poppins"><tspan x="0" y="18">Order Paid:</tspan><tspan x="0" y="44">$150</tspan></text>
+  </g>
+</svg>
